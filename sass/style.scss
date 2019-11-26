@@ -1,10 +1,20 @@
 // Variable overrides for Bootstrap
 // (look in bootstrap/variables to see
 // what variables exists)
-@import 'variable-overrides';
+@import "variable-overrides";
 
 // The whole Bootstrap library
-@import 'bootstrap/bootstrap';
+@import "bootstrap/bootstrap";
+
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower|Poiret+One&display=swap");
 
 // My own CSS (as little as possible)
-@import 'sticky-footer';
+@import "sticky-footer";
+
+body {
+  font-family: Poiret One;
+}
+
+h1 {
+  font-family: Indie Flower;
+}
