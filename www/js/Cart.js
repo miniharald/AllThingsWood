@@ -1,18 +1,14 @@
 class Cart {
+  products = []
 
-  
-
+  get count() {
+    return this.products.length;
+  }
   
   add(product) {
-
-    let count = 1;
-    $(".btn-primary").click(function(){
-      
-      console.log(count)
-      count++;
-      console.log(count)
-      $("span").text(count);
-      });
+    this.products.push(product)
+    
+    $("nav > div > .btn >span").text(this.count);
 
     // alert(`
     //   I am the cart. I'm still really stupid 😢!

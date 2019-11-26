@@ -8,7 +8,8 @@ class Product {
   }
 
   addBuyButtonListener() {
-    $('body').on('click', `#buy-button-${this.id}`, e => {
+ // $('body').on('click', "#buy-button-" + this.id, e => {
+    $('body').on('click', `#buy-button-${this.id}`, (e) => {
       e.preventDefault();
       this.cart.add(this);
     });
