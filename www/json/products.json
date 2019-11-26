@@ -1,26 +1,168 @@
 [
   {
     "id": 1,
-    "slug": "produkter-badanka",
-    "name": "Badanka",
-    "price": 99,
-    "image": "/images/badanka.jpg",
-    "description": "En fin badanka som dubblar som superhjälte. Kläm på den och den kvackar!"
+    "slug": "wooden-walle",
+    "name": "Hand crafted Wall-e",
+    "price": 480,
+    "image": "/images/woodenWalee.jpg",
+    "description": "Here I will write text about wall-e! Have you seen the movie? ",
+    "weight": 2,
+    "tag": "kid"
+    
   },
   {
     "id": 2,
-    "slug": "produkter-ryggborste",
-    "name": "Ryggborste",
-    "price": 149,
-    "image": "/images/ryggborste.jpg",
-    "description": "En genuin ryggborste. Ergonomisk och bra på att ta bort döda hudceller."
+    "slug": "tv-table-lux",
+    "name": "Mahogany tv-table",
+    "price": 280,
+    "image": "/images/woodenTable.jpg",
+    "description": "This hand crafted wooden beauty really likes to carry stuff. This table will not let you down.",
+    "weight": 6,
+    "tag": "home"
   },
   {
     "id": 3,
-    "slug": "produkter-tval",
-    "name": "Tvål",
-    "price": 34,
-    "image": "/images/tval.jpg",
-    "description": "En ph-neutral tvål, milt parfymerad med citrusdoft."
+    "slug": "wooden-bear",
+    "name": "Wooden Teddy",
+    "price": 65,
+    "image": "/images/woodenToyBear.jpg",
+    "description": "Realy cuddly, almost soft and ready to mingle with dingle and hingle and will edit later.",
+    "weight": 0.5,
+    "tag": "kid" 
   }
+  ,
+  {
+    "id": 4,
+    "slug": "wooden-toothbrush",
+    "name": "Woodstock smile",
+    "price": 65,
+    "image": "/images/woodenToothbrush.jpg",
+    "description": "Really great for your teeth especially if they are white and love wood",
+    "weight": 0.07,
+    "tag": "health" 
+  }
+  ,
+  {
+    "id": 5,
+    "slug": "wooden-starclock",
+    "name": "Panda band",
+    "price": 95,
+    "image": "/images/woodenStarclock.jpg",
+    "description": "Time is money and money is enought o buy this clock, don't be a plock and snatch it while you can",
+    "weight": 1.7,
+    "tag": "home" 
+  }
+  ,
+  {
+    "id": 5,
+    "slug": "wooden-lightlamp",
+    "name": "Light Lamp",
+    "price": 99,
+    "image": "/images/woodenLightlamp.jpg",
+    "description": "Never feel down because this light is up and I will propbably re-write this article here talking about a lamp I wish I had ",
+    "weight": 0.9,
+    "tag": "home" 
+  }
+  ,
+  {
+    "id": 6,
+    "slug": "wooden-darklamp",
+    "name": "Dark Lamp",
+    "price": 99,
+    "image": "/images/woodenlamp.jpg",
+    "description": "This one will make you feel like ursula and dracuala combined, something something onyx",
+    "weight": 0.9,
+    "tag": "home" 
+  }
+  ,
+  {
+    "id": 6,
+    "slug": "wooden-IpadCase",
+    "name": "Premium Ipad case",
+    "price": 79,
+    "image": "/images/woodenIpadCase.jpg",
+    "description": "Protect what your apple products with some apple tree",
+    "weight": 0.4,
+    "tag": "accessory" 
+  }
+  ,
+  {
+    "id": 6,
+    "slug": "wooden-ancient-house",
+    "name": "Shanxi",
+    "price": 2400,
+    "image": "/images/woodenHouse.jpg",
+    "description": "need to write this mulan mulan",
+    "weight": 0.4,
+    "tag": "accessory" 
+  }
+  ,
+  {
+    "id": 7,
+    "slug": "wooden-knife-holder",
+    "name": "Premium knife holder",
+    "price": 75,
+    "image": "/images/woodenForKnife.jpg",
+    "description": "used by chefs and luxury resturants from all over the world, really sharp and clean design",
+    "weight": 1.1,
+    "tag": "home" 
+  }
+  ,
+  {
+    "id": 8,
+    "slug": "wooden-salad-cutlery",
+    "name": "Organic salad fingers",
+    "price": 49,
+    "image": "/images/woodenCutlery.jpg",
+    "description": "Sometimes when you're hungry but don't feel like eating you can just have a salad instead",
+    "weight": 0.65,
+    "tag": "home" 
+  }
+
+  ,
+  {
+    "id": 9,
+    "slug": "wooden-classy-clock",
+    "name": "Special time",
+    "price": 290,
+    "image": "/images/woodenClassyClock.jpg",
+    "description": "I always wanted to have a big classy clock and now I can finally have this one, I want everyone to have it now so that's why it's on here. ",
+    "weight": 2.1,
+    "tag": "home" 
+  }
+  ,
+  {
+    "id": 10,
+    "slug": "wooden-alarm-clock",
+    "name": "Bamboo alarm",
+    "price": 49,
+    "image": "/images/woodenAlarmclock.jpg",
+    "description": "Here i will write something about this clock that doesn't look interesting at all but I have to make it look appealing thank you for reading. ",
+    "weight": 0.8,
+    "tag": "home" 
+  }
+  ,
+  {
+    "id": 11,
+    "slug": "wooden-brush",
+    "name": "brush",
+    "price": 39,
+    "image": "/images/ryggborste.jpg",
+    "description": "I found this product by chance and I really liked it so I kept it, here you can buy it idc, will changer this so this is just design text to make sure everything fits alright  ",
+    "weight": 0.4,
+    "tag": "home" 
+  }
+  ,
+  {
+    "id": 12,
+    "slug": "wooden-backpack",
+    "name": "Backpack",
+    "price": 390,
+    "image": "/images/woodenBackpack.jpg",
+    "description": "I found this product by chance and I really liked it so I kept it, here you can buy it idc, will changer this so this is just design text to make sure everything fits alright  ",
+    "weight": 0.4,
+    "tag": "home" 
+  }
+
+  
 ]
