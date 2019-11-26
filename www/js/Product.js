@@ -23,7 +23,7 @@ class Product {
       <section class="row">
         <div class="col-12 col-lg-9">
           <p>${this.description}</p>
-          <h4>${this.price} kr</p>
+          <h4> $${this.price} </p>
           <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
         </div>
         <div class="col-12 col-lg-3">
@@ -37,7 +37,7 @@ class Product {
     return `
       <div class="col-12 col-md-6 col-lg-4 mt-5">
         <a href="#${this.slug}">
-          <h4>${this.name} ${this.price} kr</h4>
+          <h4>${this.name} $${this.price} </h4>
           <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
           <img class="img-fluid border border-primary rounded" src="${this.image}">
         </a>
