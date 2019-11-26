@@ -2,7 +2,7 @@
   {
     "id": 1,
     "slug": "wooden-walle",
-    "name": "Wall-e",
+    "name": "Hand crafted Wall-e",
     "price": 480,
     "image": "/images/woodenWalee.jpg",
     "description": "Here I will write text about wall-e! Have you seen the movie? ",
@@ -12,18 +12,18 @@
   },
   {
     "id": 2,
-    "slug": "tv-table",
-    "name": "Tv Table",
+    "slug": "tv-table-lux",
+    "name": "Mahogany tv-table",
     "price": 280,
     "image": "/images/woodenTable.jpg",
-    "description": "This wooden beauty really likes to carry a heavy tv. This table will not let you down.",
+    "description": "This hand crafted wooden beauty really likes to carry stuff. This table will not let you down.",
     "weight": 6,
     "tag": "home"
   },
   {
     "id": 3,
     "slug": "wooden-bear",
-    "name": "Teddy",
+    "name": "Wooden Teddy",
     "price": 65,
     "image": "/images/woodenToyBear.jpg",
     "description": "Realy cuddly, almost soft and ready to mingle with dingle and hingle and will edit later.",
@@ -34,7 +34,7 @@
   {
     "id": 4,
     "slug": "wooden-toothbrush",
-    "name": "Toothbrush",
+    "name": "Woodstock smile",
     "price": 65,
     "image": "/images/woodenToothbrush.jpg",
     "description": "Really great for your teeth especially if they are white and love wood",
@@ -45,8 +45,8 @@
   {
     "id": 5,
     "slug": "wooden-starclock",
-    "name": "StarClock",
-    "price": 145,
+    "name": "Panda band",
+    "price": 95,
     "image": "/images/woodenStarclock.jpg",
     "description": "Time is money and money is enought o buy this clock, don't be a plock and snatch it while you can",
     "weight": 1.7,
@@ -145,9 +145,20 @@
   {
     "id": 11,
     "slug": "wooden-brush",
-    "name": "Stolen product",
+    "name": "brush",
     "price": 39,
     "image": "/images/ryggborste.jpg",
+    "description": "I found this product by chance and I really liked it so I kept it, here you can buy it idc, will changer this so this is just design text to make sure everything fits alright  ",
+    "weight": 0.4,
+    "tag": "home" 
+  }
+  ,
+  {
+    "id": 12,
+    "slug": "wooden-backpack",
+    "name": "Backpack",
+    "price": 390,
+    "image": "/images/woodenBackpack.jpg",
     "description": "I found this product by chance and I really liked it so I kept it, here you can buy it idc, will changer this so this is just design text to make sure everything fits alright  ",
     "weight": 0.4,
     "tag": "home" 
