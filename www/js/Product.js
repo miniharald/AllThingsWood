@@ -4,6 +4,7 @@ class Product {
     Object.assign(this, data);
     this.cart = cart;
     this.addBuyButtonListener();
+  
   }
 
   addBuyButtonListener() {
@@ -44,5 +45,6 @@ class Product {
       </div>
     `
   }
+  
 
 }
