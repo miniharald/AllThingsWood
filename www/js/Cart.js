@@ -4,11 +4,13 @@ class Cart {
   get count() {
     return this.products.length;
   }
-  
+
   add(product) {
     this.products.push(product)
-    
-    $("nav > div > .btn >span").text(this.count);
+
+    $("nav > .btn >span").text(this.count);
+
+    //console.log(this.products)
 
     // alert(`
     //   I am the cart. I'm still really stupid 😢!
