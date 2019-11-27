@@ -22,13 +22,13 @@ class Product {
           <h1>${this.name}</h1>
         </div>
       </section>
-      <section class="row">
+      <section class="row item">
         <div class="col-12 col-lg-9">
           <p>${this.description}</p>
           <h4> $${this.price} </p>
           <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
         </div>
-        <div class="col-12 col-lg-3">
+        <div class="col-12 col-lg-3 item">
           <img class="img-fluid border border-primary rounded" src="${this.image}">
         </div>
       </section>
@@ -37,10 +37,10 @@ class Product {
 
   renderInList() {
     return `
-      <div class="col-12 col-md-6 col-lg-4 mt-5">
+      <div class="col-12 col-md-6 col-lg-4 mt-5 item">
         <a href="#${this.slug}">
           <h4>${this.name} $${this.price} </h4>
-          <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
+          <button id="buy-button-${this.id}" class="btn btn-primary my-2 item">Köp</button>
           <img class="img-fluid border border-primary rounded" src="${this.image}">
         </a>
       </div>
