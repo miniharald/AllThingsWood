@@ -54,7 +54,7 @@
   }
   ,
   {
-    "id": 5,
+    "id": 6,
     "slug": "wooden-lightlamp",
     "name": "Light Lamp",
     "price": 99,
@@ -65,7 +65,7 @@
   }
   ,
   {
-    "id": 6,
+    "id": 7,
     "slug": "wooden-darklamp",
     "name": "Dark Lamp",
     "price": 99,
@@ -76,7 +76,7 @@
   }
   ,
   {
-    "id": 6,
+    "id": 8,
     "slug": "wooden-IpadCase",
     "name": "Premium Ipad case",
     "price": 79,
@@ -87,7 +87,7 @@
   }
   ,
   {
-    "id": 6,
+    "id": 9,
     "slug": "wooden-ancient-house",
     "name": "Shanxi",
     "price": 2400,
@@ -98,7 +98,7 @@
   }
   ,
   {
-    "id": 7,
+    "id": 10,
     "slug": "wooden-knife-holder",
     "name": "Premium knife holder",
     "price": 75,
@@ -109,7 +109,7 @@
   }
   ,
   {
-    "id": 8,
+    "id": 11,
     "slug": "wooden-salad-cutlery",
     "name": "Organic salad fingers",
     "price": 49,
@@ -121,7 +121,7 @@
 
   ,
   {
-    "id": 9,
+    "id": 12,
     "slug": "wooden-classy-clock",
     "name": "Special time",
     "price": 290,
@@ -132,7 +132,7 @@
   }
   ,
   {
-    "id": 10,
+    "id": 13,
     "slug": "wooden-alarm-clock",
     "name": "Bamboo alarm",
     "price": 49,
@@ -143,7 +143,7 @@
   }
   ,
   {
-    "id": 11,
+    "id": 14,
     "slug": "wooden-brush",
     "name": "brush",
     "price": 39,
@@ -154,7 +154,7 @@
   }
   ,
   {
-    "id": 12,
+    "id": 15,
     "slug": "wooden-backpack",
     "name": "Backpack",
     "price": 390,
