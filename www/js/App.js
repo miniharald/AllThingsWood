@@ -2,7 +2,7 @@ class App {
   constructor() {
     this.routes = {
       "": new StartPage(),
-      "omoss": new AboutUs(),
+      "about": new AboutUs(),
       "page404": new Page404(),
       "cart": new ShoppingCartList(),
       "confirm": new ConfirmationPage()
@@ -29,7 +29,7 @@ class App {
       this.products.push(product);
       this.routes[product.slug] = product;
     }
-    this.routes.produkter = new ProductList(this.products);
+    this.routes.shop = new ProductList(this.products);
     this.changeRoute();
   }
 }
