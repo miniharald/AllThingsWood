@@ -2,9 +2,10 @@ class App {
   constructor() {
     this.routes = {
       "": new StartPage(),
-      omoss: new AboutUs(),
-      page404: new Page404(),
-      cart: new ShoppingCartList()
+      "omoss": new AboutUs(),
+      "page404": new Page404(),
+      "cart": new ShoppingCartList(),
+      "confirm": new ConfirmationPage()
     };
     this.cart = new Cart();
     $(window).on("hashchange", () => this.changeRoute());
