@@ -5,7 +5,7 @@ class App {
       "about": new AboutUs(),
       "page404": new Page404(),
       "cart": new ShoppingCartList(),
-      "confirm": new ConfirmationPage()
+      "confirm": new ConfirmationPage(),
     };
     this.cart = new Cart();
     $(window).on("hashchange", () => this.changeRoute());

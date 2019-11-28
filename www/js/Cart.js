@@ -1,14 +1,29 @@
 class Cart {
-  products = []
 
+
+
+   
+
+  //objects array   
+  products = []
+  //count total products
   get count() {
     return this.products.length;
-  }
 
+  }
+  
+  //gets the product play the animation and add product to array
   add(product) {
     this.products.push(product)
+    console.log(this.products)
+    console.log(this.products[0].id)
+    console.log(this.products[0].name)
+    console.log(this.products[0].price)
+
+    
+
+
     let x = $(product).attr('id') - 1;
-   console.log(x);
 
         var cart = $('.fa-shopping-cart');
         var imgtodrag = $(".item").find("img").eq(x);
@@ -45,15 +60,41 @@ class Cart {
                 $(this).detach()
             });
         }
-        $("nav > div > .btn >span").text(this.count);
+        $(" a >span").text(this.count);
+        
+    }
 
-  
-    // alert(`
-    //   I am the cart. I'm still really stupid 
-    //   I have no render-method and no methods that calc sums.
-    //   I have no add and remove methods...
-    //   But I know that you tried to add this product to me:
-    //   ${JSON.stringify({ ...product, cart: undefined }, '', '  ')}
-    // `.replace(/\n\s*/g, '\n'))
+  render() {
+      let name = "HHGGS"
+    $('main').html(/*html*/`
+     <section class="row">
+        <div class="col">
+          <h1>${name}</h1>
+        </div>
+      </section>
+      <section class="row item">
+        <div class="col-12 col-lg-9">
+          <p>${myProduc.description}</p>
+          <h4> $${myProduc.price} </p>
+          <button id="buy-button-${this.id}" class="btn btn-primary my-2">K??p</button>
+        </div>
+        <div class="col-12 col-lg-3 item">
+          <img class="img-fluid border border-primary rounded" src="${this.image}">
+        </div>
+      </section>
+    `);
   }
+  renderInList() {
+    return `
+      <div class="col-12 col-md-6 col-lg-4 mt-5 item">
+        <a href="#${product.slug}">
+          <h4>${product.name} $${this.price} </h4>
+          <button id="buy-button-${this.id}" class="btn btn-primary my-2 item">K??p</button>
+          <img class="img-fluid border border-primary rounded" src="${this.image}">
+        </a>
+      </div>
+    `
+  }
+
+
 }
