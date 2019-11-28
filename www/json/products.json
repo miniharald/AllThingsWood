@@ -7,7 +7,8 @@
     "image": "/images/woodenWalee.jpg",
     "description": "Here I will write text about wall-e! Have you seen the movie? ",
     "weight": 2,
-    "tag": "kid"
+    "tag": "kid",
+    "short": "Handmade Disney Toy"
     
   },
   {
@@ -18,7 +19,8 @@
     "image": "/images/woodenTable.jpg",
     "description": "This hand crafted wooden beauty really likes to carry stuff. This table will not let you down.",
     "weight": 6,
-    "tag": "home"
+    "tag": "home",
+    "short": "Fine Tv-Table"
   },
   {
     "id": 3,
@@ -28,7 +30,8 @@
     "image": "/images/woodenToyBear.jpg",
     "description": "Realy cuddly, almost soft and ready to mingle with dingle and hingle and will edit later.",
     "weight": 0.5,
-    "tag": "kid" 
+    "tag": "kid",
+    "short": "Handmade Teddy Bear"
   }
   ,
   {
@@ -39,7 +42,8 @@
     "image": "/images/woodenToothbrush.jpg",
     "description": "Really great for your teeth especially if they are white and love wood",
     "weight": 0.07,
-    "tag": "health" 
+    "tag": "health",
+    "short": "Healthy Bamboo Fiber"
   }
   ,
   {
@@ -50,7 +54,8 @@
     "image": "/images/woodenStarclock.jpg",
     "description": "Time is money and money is enought o buy this clock, don't be a plock and snatch it while you can",
     "weight": 1.7,
-    "tag": "home" 
+    "tag": "home",
+    "short": "Clock Wooden Light"
   }
   ,
   {
@@ -61,7 +66,8 @@
     "image": "/images/woodenLightlamp.jpg",
     "description": "Never feel down because this light is up and I will propbably re-write this article here talking about a lamp I wish I had ",
     "weight": 0.9,
-    "tag": "home" 
+    "tag": "home",
+    "short": "Marine Style Clock"
   }
   ,
   {
@@ -72,7 +78,9 @@
     "image": "/images/woodenlamp.jpg",
     "description": "This one will make you feel like ursula and dracuala combined, something something onyx",
     "weight": 0.9,
-    "tag": "home" 
+    "tag": "home",
+    "short": "Onyx Wood Clock"
+     
   }
   ,
   {
@@ -83,7 +91,8 @@
     "image": "/images/woodenIpadCase.jpg",
     "description": "Protect what your apple products with some apple tree",
     "weight": 0.4,
-    "tag": "accessory" 
+    "tag": "accessory",
+    "short": "Ipad Case Dank"
   }
   ,
   {
@@ -94,7 +103,8 @@
     "image": "/images/woodenHouse.jpg",
     "description": "need to write this mulan mulan",
     "weight": 0.4,
-    "tag": "accessory" 
+    "tag": "accessory",
+    "short": "Shanxi Style Display"
   }
   ,
   {
@@ -105,7 +115,8 @@
     "image": "/images/woodenForKnife.jpg",
     "description": "used by chefs and luxury resturants from all over the world, really sharp and clean design",
     "weight": 1.1,
-    "tag": "home" 
+    "tag": "home",
+    "short": "Knife Display Medium"
   }
   ,
   {
@@ -116,7 +127,8 @@
     "image": "/images/woodenCutlery.jpg",
     "description": "Sometimes when you're hungry but don't feel like eating you can just have a salad instead",
     "weight": 0.65,
-    "tag": "home" 
+    "tag": "home",
+    "short": "Salad Spoon Pack"
   }
 
   ,
@@ -128,7 +140,8 @@
     "image": "/images/woodenClassyClock.jpg",
     "description": "I always wanted to have a big classy clock and now I can finally have this one, I want everyone to have it now so that's why it's on here. ",
     "weight": 2.1,
-    "tag": "home" 
+    "tag": "home",
+    "short": "Clock of Shock"
   }
   ,
   {
@@ -139,7 +152,8 @@
     "image": "/images/woodenAlarmclock.jpg",
     "description": "Here i will write something about this clock that doesn't look interesting at all but I have to make it look appealing thank you for reading. ",
     "weight": 0.8,
-    "tag": "home" 
+    "tag": "home",
+    "short": "Time For Wood"
   }
   ,
   {
@@ -150,7 +164,8 @@
     "image": "/images/ryggborste.jpg",
     "description": "I found this product by chance and I really liked it so I kept it, here you can buy it idc, will changer this so this is just design text to make sure everything fits alright  ",
     "weight": 0.4,
-    "tag": "home" 
+    "tag": "home",
+    "short": "Health Brush Oak"
   }
   ,
   {
@@ -161,7 +176,8 @@
     "image": "/images/woodenBackpack.jpg",
     "description": "I found this product by chance and I really liked it so I kept it, here you can buy it idc, will changer this so this is just design text to make sure everything fits alright  ",
     "weight": 0.4,
-    "tag": "home" 
+    "tag": "home",
+    "short": "Backpack Very Ugly"
   }
 
   
