@@ -15,7 +15,7 @@ class ShoppingCartList{
     //         <div class="col-12 col-lg-9">
     //           <p>${this.description}</p>
     //           <h4> $${price} </p>
-    //           <button id="buy-button-${this.id}" class="btn btn-primary my-2">Kรถp</button>
+    //           <button id="buy-button-${this.id}" class="btn btn-primary my-2"></button>
     //         </div>
     //         <div class="col-12 col-lg-3 item">
     //           <img class="img-fluid border border-primary rounded" src="${this.image}">

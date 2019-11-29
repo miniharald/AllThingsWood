@@ -12,6 +12,7 @@ class Product {
     $('body').on('click', `#buy-button-${this.id}`, (e) => {
       e.preventDefault();
       this.cart.add(this);
+      this.animation(`${this.id}`)
     });
   }
 
@@ -26,7 +27,7 @@ class Product {
         <div class="col-12 col-lg-9">
           <p>${this.description}</p>
           <h4> $${this.price} </p>
-          <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
+          <button value ="0" id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
         </div>
         <div class="col-12 col-lg-3 item">
           <img class="img-fluid border border-primary rounded" src="${this.image}">
@@ -36,15 +37,62 @@ class Product {
   }
 
   renderInList() {
+  
     return `
       <div class="col-12 col-md-6 col-lg-4 mt-5 item">
         <a href="#${this.slug}">
           <h4>${this.name} $${this.price} </h4>
           <button id="buy-button-${this.id}" class="btn btn-primary my-2 item">Köp</button>
-          <img class="img-fluid border border-primary rounded" src="${this.image}">
+          <img class="img-fluid border border-primary rounded" src="${this.image}" >
         </a>
       </div>
+      
     `
+    
+  }
+
+  animation(id){
+
+    let x = id -1 ;
+var cart = $('.fa-shopping-cart');
+var imgtodrag = $(".item").find("img").eq(x);
+if (imgtodrag) {
+    var imgclone = imgtodrag.clone().offset({
+        top : imgtodrag.offset().top,
+        left : imgtodrag.offset().left
+    })
+        .css({
+        'opacity': '0.5',
+            'position': 'absolute',
+            'height': '150px',
+            'width': '150px',
+            'z-index': '100'
+    })
+        .appendTo($('main'))
+        .animate({
+        'top': cart.offset().top + 10,
+            'left': cart.offset().left + 10,
+            'width': 75,
+            'height': 75
+    }, 1000, 'easeInOutExpo');
+    
+    setTimeout(function () {
+        cart.effect("shake", {
+            times: 2
+        }, 200);
+    }, 1900);
+
+    imgclone.animate({
+        'width': 0,
+            'height': 0
+    }, function () {
+        $(this).detach()
+    });
+}
+
+
+
+
   }
   
 

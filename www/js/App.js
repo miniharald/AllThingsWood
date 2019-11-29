@@ -4,7 +4,7 @@ class App {
       "": new StartPage(),
       "about": new AboutUs(),
       "page404": new Page404(),
-      "cart": new ShoppingCartList(),
+      "cart": new Cart(),
       "confirm": new ConfirmationPage(),
     };
     this.cart = new Cart();
