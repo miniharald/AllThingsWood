@@ -8,8 +8,8 @@
     "description": "Here I will write text about wall-e! Have you seen the movie? ",
     "weight": 2,
     "tag": "kid",
-    "short": "Handmade Disney Toy"
-    
+    "short": "Handmade Disney Toy",
+    "quantity": "1"
   },
   {
     "id": 2,
@@ -20,7 +20,8 @@
     "description": "This hand crafted wooden beauty really likes to carry stuff. This table will not let you down.",
     "weight": 6,
     "tag": "home",
-    "short": "Fine Tv-Table"
+    "short": "Fine Tv-Table",
+    "quantity": "1"
   },
   {
     "id": 3,
@@ -31,9 +32,9 @@
     "description": "Realy cuddly, almost soft and ready to mingle with dingle and hingle and will edit later.",
     "weight": 0.5,
     "tag": "kid",
-    "short": "Handmade Teddy Bear"
-  }
-  ,
+    "short": "Handmade Teddy Bear",
+    "quantity": "1"
+  },
   {
     "id": 4,
     "slug": "wooden-toothbrush",
@@ -43,9 +44,9 @@
     "description": "Really great for your teeth especially if they are white and love wood",
     "weight": 0.07,
     "tag": "health",
-    "short": "Healthy Bamboo Fiber"
-  }
-  ,
+    "short": "Healthy Bamboo Fiber",
+    "quantity": "1"
+  },
   {
     "id": 5,
     "slug": "wooden-starclock",
@@ -55,9 +56,9 @@
     "description": "Time is money and money is enought o buy this clock, don't be a plock and snatch it while you can",
     "weight": 1.7,
     "tag": "home",
-    "short": "Clock Wooden Light"
-  }
-  ,
+    "short": "Clock Wooden Light",
+    "quantity": "1"
+  },
   {
     "id": 6,
     "slug": "wooden-lightlamp",
@@ -67,9 +68,9 @@
     "description": "Never feel down because this light is up and I will propbably re-write this article here talking about a lamp I wish I had ",
     "weight": 0.9,
     "tag": "home",
-    "short": "Marine Style Clock"
-  }
-  ,
+    "short": "Marine Style Clock",
+    "quantity": "1"
+  },
   {
     "id": 7,
     "slug": "wooden-darklamp",
@@ -79,10 +80,9 @@
     "description": "This one will make you feel like ursula and dracuala combined, something something onyx",
     "weight": 0.9,
     "tag": "home",
-    "short": "Onyx Wood Clock"
-     
-  }
-  ,
+    "short": "Onyx Wood Clock",
+    "quantity": "1"
+  },
   {
     "id": 8,
     "slug": "wooden-IpadCase",
@@ -92,9 +92,9 @@
     "description": "Protect what your apple products with some apple tree",
     "weight": 0.4,
     "tag": "accessory",
-    "short": "Ipad Case Dank"
-  }
-  ,
+    "short": "Ipad Case Dank",
+    "quantity": "1"
+  },
   {
     "id": 9,
     "slug": "wooden-ancient-house",
@@ -104,9 +104,9 @@
     "description": "need to write this mulan mulan",
     "weight": 0.4,
     "tag": "accessory",
-    "short": "Shanxi Style Display"
-  }
-  ,
+    "short": "Shanxi Style Display",
+    "quantity": "1"
+  },
   {
     "id": 10,
     "slug": "wooden-knife-holder",
@@ -116,9 +116,9 @@
     "description": "used by chefs and luxury resturants from all over the world, really sharp and clean design",
     "weight": 1.1,
     "tag": "home",
-    "short": "Knife Display Medium"
-  }
-  ,
+    "short": "Knife Display Medium",
+    "quantity": "1"
+  },
   {
     "id": 11,
     "slug": "wooden-salad-cutlery",
@@ -128,10 +128,9 @@
     "description": "Sometimes when you're hungry but don't feel like eating you can just have a salad instead",
     "weight": 0.65,
     "tag": "home",
-    "short": "Salad Spoon Pack"
-  }
-
-  ,
+    "short": "Salad Spoon Pack",
+    "quantity": "1"
+  },
   {
     "id": 12,
     "slug": "wooden-classy-clock",
@@ -141,9 +140,9 @@
     "description": "I always wanted to have a big classy clock and now I can finally have this one, I want everyone to have it now so that's why it's on here. ",
     "weight": 2.1,
     "tag": "home",
-    "short": "Clock of Shock"
-  }
-  ,
+    "short": "Clock of Shock",
+    "quantity": "1"
+  },
   {
     "id": 13,
     "slug": "wooden-alarm-clock",
@@ -153,9 +152,9 @@
     "description": "Here i will write something about this clock that doesn't look interesting at all but I have to make it look appealing thank you for reading. ",
     "weight": 0.8,
     "tag": "home",
-    "short": "Time For Wood"
-  }
-  ,
+    "short": "Time For Wood",
+    "quantity": "1"
+  },
   {
     "id": 14,
     "slug": "wooden-brush",
@@ -165,9 +164,9 @@
     "description": "I found this product by chance and I really liked it so I kept it, here you can buy it idc, will changer this so this is just design text to make sure everything fits alright  ",
     "weight": 0.4,
     "tag": "home",
-    "short": "Health Brush Oak"
-  }
-  ,
+    "short": "Health Brush Oak",
+    "quantity": "1"
+  },
   {
     "id": 15,
     "slug": "wooden-backpack",
@@ -177,8 +176,7 @@
     "description": "I found this product by chance and I really liked it so I kept it, here you can buy it idc, will changer this so this is just design text to make sure everything fits alright  ",
     "weight": 0.4,
     "tag": "home",
-    "short": "Backpack Very Ugly"
+    "short": "Backpack Very Ugly",
+    "quantity": "1"
   }
-
-  
 ]

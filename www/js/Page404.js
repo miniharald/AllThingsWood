@@ -3,9 +3,9 @@ class Page404 {
     $('main').html(/*html*/`
       <section class="row">
         <div class="col">
-          <h1>Vi hittade inte sidan 😢...</h1>
-          <p>Det här är säkert vårt fel! Ibland bygger vi om vår sida - och produkter kan försvinna från vårt sortiment.</p>
-          <p>Vill du kolla in <a href="#produkter">nya fräscha produkter</a>?</p>
+          <h1>Page not found 😢...</h1>
+          <p class="font-weight-bolder">It could be our fault, maybe yours... who knows?</p>
+          <p class="font-weight-bolder">Do you like to check some of <a href="#shop">our new wooden stuff</a>?</p>
         </div>
       </section>
     `);
