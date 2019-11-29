@@ -4,11 +4,11 @@ class Product {
     Object.assign(this, data);
     this.cart = cart;
     this.addBuyButtonListener();
-  
+
   }
 
   addBuyButtonListener() {
- // $('body').on('click', "#buy-button-" + this.id, e => {
+    // $('body').on('click', "#buy-button-" + this.id, e => {
     $('body').on('click', `#buy-button-${this.id}`, (e) => {
       e.preventDefault();
       this.cart.add(this);
@@ -26,7 +26,7 @@ class Product {
         <div class="col-12 col-lg-9">
           <p>${this.description}</p>
           <h4> $${this.price} </p>
-          <button id="buy-button-${this.id}" class="btn btn-primary my-2">Köp</button>
+          <button id="buy-button-${this.id}" class="btn btn-primary my-2">Buy</button>
         </div>
         <div class="col-12 col-lg-3 item">
           <img class="img-fluid border border-primary rounded" src="${this.image}">
@@ -40,12 +40,12 @@ class Product {
       <div class="col-12 col-md-6 col-lg-4 mt-5 item">
         <a href="#${this.slug}">
           <h4>${this.name} $${this.price} </h4>
-          <button id="buy-button-${this.id}" class="btn btn-primary my-2 item">Köp</button>
+          <button id="buy-button-${this.id}" class="btn btn-primary my-2 item">Buy</button>
           <img class="img-fluid border border-primary rounded" src="${this.image}">
         </a>
       </div>
     `
   }
-  
+
 
 }
