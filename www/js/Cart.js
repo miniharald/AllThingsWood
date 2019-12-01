@@ -19,6 +19,14 @@ class Cart {
 
   }
 
+  totalCartCost() {
+    let totalCost = 0;
+    for (let i in this.products) {
+      totalCost += this.products[i].price * this.products[i].quantity;
+    }
+    return totalCost;
+  }
+
   add(product) {
     for (let i in this.products) {
       if (this.products[i].id === product.id) {
@@ -65,7 +73,7 @@ class Cart {
                       - ${this.products[i].quantity} +
                     </td>
                     <td>
-                      $${this.products[i].price}
+                      $${this.products[i].price * this.products[i].quantity}
                     </td>
                   </tr>`;
     }
@@ -76,7 +84,10 @@ class Cart {
                       <table class="table table-striped p-1 align-middle font-weight-bolder">
                         ${output}
                       </table>
-                    </div>`);
+                    </div>
+                    <section class="text-right font-weight-bolder">
+                      Total Cost: $${this.totalCartCost()}
+                    </section>`);
   }
 
   render() {
