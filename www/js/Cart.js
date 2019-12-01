@@ -11,11 +11,22 @@ class Cart {
 
 
   get count() {
-    return this.products.length;
+    let cartCount = 0;
+    for (let i in this.products) {
+      cartCount += this.products[i].quantity;
+    }
+    return cartCount;
 
   }
 
   add(product) {
+    for (let i in this.products) {
+      if (this.products[i].id === product.id) {
+        this.products[i].quantity++;
+        $(" a >span").text(this.count);
+        return;
+      }
+    }
     this.products.push(product)
     $(" a >span").text(this.count);
     console.log(this.products)
