@@ -9,7 +9,7 @@
     "weight": 2,
     "tag": "kid",
     "short": "Handmade Disney Toy",
-    "quantity": "1"
+    "quantity": 1
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "weight": 6,
     "tag": "home",
     "short": "Fine Tv-Table",
-    "quantity": "1"
+    "quantity": 1
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
     "weight": 0.5,
     "tag": "kid",
     "short": "Handmade Teddy Bear",
-    "quantity": "1"
+    "quantity": 1
   },
   {
     "id": 4,
@@ -45,7 +45,7 @@
     "weight": 0.07,
     "tag": "health",
     "short": "Healthy Bamboo Fiber",
-    "quantity": "1"
+    "quantity": 1
   },
   {
     "id": 5,
@@ -57,7 +57,7 @@
     "weight": 1.7,
     "tag": "home",
     "short": "Clock Wooden Light",
-    "quantity": "1"
+    "quantity": 1
   },
   {
     "id": 6,
@@ -69,7 +69,7 @@
     "weight": 0.9,
     "tag": "home",
     "short": "Marine Style Clock",
-    "quantity": "1"
+    "quantity": 1
   },
   {
     "id": 7,
@@ -81,7 +81,7 @@
     "weight": 0.9,
     "tag": "home",
     "short": "Onyx Wood Clock",
-    "quantity": "1"
+    "quantity": 1
   },
   {
     "id": 8,
@@ -93,7 +93,7 @@
     "weight": 0.4,
     "tag": "accessory",
     "short": "Ipad Case Dank",
-    "quantity": "1"
+    "quantity": 1
   },
   {
     "id": 9,
@@ -105,7 +105,7 @@
     "weight": 0.4,
     "tag": "accessory",
     "short": "Shanxi Style Display",
-    "quantity": "1"
+    "quantity": 1
   },
   {
     "id": 10,
@@ -117,7 +117,7 @@
     "weight": 1.1,
     "tag": "home",
     "short": "Knife Display Medium",
-    "quantity": "1"
+    "quantity": 1
   },
   {
     "id": 11,
@@ -129,7 +129,7 @@
     "weight": 0.65,
     "tag": "home",
     "short": "Salad Spoon Pack",
-    "quantity": "1"
+    "quantity": 1
   },
   {
     "id": 12,
@@ -141,7 +141,7 @@
     "weight": 2.1,
     "tag": "home",
     "short": "Clock of Shock",
-    "quantity": "1"
+    "quantity": 1
   },
   {
     "id": 13,
@@ -153,7 +153,7 @@
     "weight": 0.8,
     "tag": "home",
     "short": "Time For Wood",
-    "quantity": "1"
+    "quantity": 1
   },
   {
     "id": 14,
@@ -165,7 +165,7 @@
     "weight": 0.4,
     "tag": "home",
     "short": "Health Brush Oak",
-    "quantity": "1"
+    "quantity": 1
   },
   {
     "id": 15,
@@ -177,6 +177,6 @@
     "weight": 0.4,
     "tag": "home",
     "short": "Backpack Very Ugly",
-    "quantity": "1"
+    "quantity": 1
   }
 ]
