@@ -10,6 +10,20 @@ class App {
     this.cart = new Cart();
     $(window).on("hashchange", () => this.changeRoute());
     this.loadProducts();
+    this.cartListListener();
+  }
+
+  cartListListener() {
+    $('nav').on('click', `.cart`, (e) => {
+      e.preventDefault();
+      if (history.pushState) {
+        history.pushState(null, null, '#cart');
+      }
+      else {
+        location.hash = '#cart';
+      }
+      this.cart.test();
+    });
   }
 
   changeRoute() {
