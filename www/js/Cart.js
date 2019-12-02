@@ -15,18 +15,13 @@ class Cart {
   //gets the product play the animation and add product to array
   add(product) {
     this.products.push(product)
-    console.log(this.products)
-    console.log(this.products[0].id)
-    console.log(this.products[0].name)
-    console.log(this.products[0].price)
-
-    
-
-
-    let x = $(product).attr('id') - 1;
+        let x = $(product).attr('id') - 1;
 
         var cart = $('.fa-shopping-cart');
         var imgtodrag = $(".item").find("img").eq(x);
+        if(!imgtodrag.length){
+          imgtodrag = $(".item").find("img").eq(0);
+        }
         if (imgtodrag) {
             var imgclone = imgtodrag.clone().offset({
                 top : imgtodrag.offset().top,
