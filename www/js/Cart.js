@@ -68,6 +68,19 @@ class Cart {
     }
   }
 
+  addItemQuantity(id) {
+    for (let i in this.products) {
+      console.log(this.products[i])
+      if (this.products[i].id == id) {
+        console.log(this.products[i].id)
+        this.products[i].quantity++;
+        $(" a >span").text(this.count);
+        this.test();
+        break;
+      }
+    }
+  }
+
   listCart() {
     let productsCopy = [];
     for (let i in this.products) {
@@ -123,6 +136,7 @@ class Cart {
                     </section>`);
 
     this.minusListener();
+    this.plusListener();
   }
 
   minusListener() {
@@ -132,6 +146,16 @@ class Cart {
       let id = $(e.target).closest('.list-item').attr('id');
       console.log(id)
       this.reduceItemQuantity(id);
+    });
+  }
+
+  plusListener() {
+    $('td').on('click', `.fa-plus-circle`, (e) => {
+      //e.preventDefault();
+      //console.log(e)
+      let id = $(e.target).closest('.list-item').attr('id');
+      console.log(id)
+      this.addItemQuantity(id);
     });
   }
 
