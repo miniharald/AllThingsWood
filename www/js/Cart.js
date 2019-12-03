@@ -2,20 +2,21 @@ class Cart {
 
   constructor() {
     this.formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+    store.products = [];
   }
 
 
 
   //objects array   
-  products = []
+
   //count total products
 
 
 
   get count() {
     let cartCount = 0;
-    for (let i in this.products) {
-      cartCount += this.products[i].quantity;
+    for (let i in store.products) {
+      cartCount += store.products[i].quantity;
     }
     return cartCount;
 
@@ -23,8 +24,8 @@ class Cart {
 
   totalCartCost() {
     let totalCost = 0;
-    for (let i in this.products) {
-      totalCost += this.products[i].price * this.products[i].quantity;
+    for (let i in store.products) {
+      totalCost += store.products[i].price * store.products[i].quantity;
     }
     return totalCost;
   }
@@ -32,50 +33,44 @@ class Cart {
   totalShippingCost() {
     let shippingWeight = 0;
     let shippingCost = 0;
-    for (let i in this.products) {
-      shippingWeight += this.products[i].weight * this.products[i].quantity;
+    for (let i in store.products) {
+      shippingWeight += store.products[i].weight * store.products[i].quantity;
     }
-    shippingCost += shippingWeight * 4;
+    shippingCost = shippingWeight * 4;
     return shippingCost;
   }
 
   add(product) {
-    for (let i in this.products) {
-      if (this.products[i].id === product.id) {
-        this.products[i].quantity++;
+    for (let i in store.products) {
+      if (store.products[i].id === product.id) {
+        store.products[i].quantity++;
         $(" a >span").text(this.count);
-        store.products = this.products;
-        //store.products = JSON.stringify(this.products)
-        // store.save();
+        //store.products = JSON.stringify(store.products)
+        store.save();
         //this.saveCart();
         return;
       }
     }
-    this.products.push(product)
+    store.products.push(product)
     $(" a >span").text(this.count);
-    store.products = this.products;
-    //store.products = JSON.stringify(this.products)
-    // store.save();
+    //store.products = JSON.stringify(store.products)
+    store.save();
     //this.saveCart();
     console.log(store.products)
 
   }
 
-  saveCart() {
-    localStorage.setItem("Cart", JSON.stringify(this.products))
-  }
-
   reduceItemQuantity(id) {
-    for (let i in this.products) {
-      console.log(this.products[i])
-      if (this.products[i].id == id) {
-        console.log(this.products[i].id)
-        this.products[i].quantity--;
-        if (this.products[i].quantity === 0) {
-          this.products.splice(i, 1);
+    for (let i in store.products) {
+      //console.log(store.products[i])
+      if (store.products[i].id == id) {
+        //console.log(store.products[i].id)
+        store.products[i].quantity--;
+        if (store.products[i].quantity == 0) {
+          store.products.splice(i, 1);
         }
         $(" a >span").text(this.count);
-        console.log(this.products)
+        console.log(store.products)
         this.test();
         break;
       }
@@ -84,11 +79,11 @@ class Cart {
   }
 
   addItemQuantity(id) {
-    for (let i in this.products) {
-      console.log(this.products[i])
-      if (this.products[i].id == id) {
-        console.log(this.products[i].id)
-        this.products[i].quantity++;
+    for (let i in store.products) {
+      console.log(store.products[i])
+      if (store.products[i].id == id) {
+        console.log(store.products[i].id)
+        store.products[i].quantity++;
         $(" a >span").text(this.count);
         this.test();
         //this.saveCart();
@@ -98,9 +93,9 @@ class Cart {
   }
 
   removeProductFromCart(id) {
-    for (let i in this.products) {
-      if (this.products[i].id == id) {
-        this.products.splice(i, 1);
+    for (let i in store.products) {
+      if (store.products[i].id == id) {
+        store.products.splice(i, 1);
         $(" a >span").text(this.count);
         this.test();
         break;
@@ -111,8 +106,8 @@ class Cart {
 
   //listCart() {
   //  let productsCopy = [];
-  //  for (let i in this.products) {
-  //    let product = this.products[i];
+  //  for (let i in store.products) {
+  //    let product = store.products[i];
   //    let productCopy = {};
   //    for (let p in product) {
   //      productCopy[p] = product[p];
@@ -125,28 +120,28 @@ class Cart {
 
   test() {
 
-    //let cartArray = this.products;
+    //let cartArray = store.products;
     //console.log(cartArray)
     let output = '';
     //console.log(output)
-    for (let i in this.products) {
-      output += `<tr class="row list-item" id="${this.products[i].id}">
+    for (let i in store.products) {
+      output += `<tr class="row list-item" id="${store.products[i].id}">
                     <td class="text-center col-1 m-0 py-1 px-0">
-                      <img class="img-fluid border border-primary rounded list" src="${this.products[i].image}">
+                      <img class="img-fluid border border-primary rounded list" src="${store.products[i].image}">
                     </td>
                     <td class="col-6 align-middle m-0 py-1 px-0">
-                      ${this.products[i].name} - ${this.products[i].short}
+                      ${store.products[i].name} - ${store.products[i].short}
                     </td>
                     <td class="align-middle col-3 row m-0 py-1 px-0">
                       <section class="col-2 m-0 p-0 text-right"><i class="fa fa-minus-circle"></i></section>
-                      <span class="quantity col-3 p-0 m-0 text-center"> ${this.products[i].quantity} </span>
+                      <span class="quantity col-3 p-0 m-0 text-center"> ${store.products[i].quantity} </span>
                       <section class="col-2 m-0 p-0"><i class="fa fa-plus-circle"></i></section>
                       <section class="col-5 m-0 p-0"><i class="fa fa-trash px-2"></i></section>
                       
                     </td>
                     <td class="text-right align-middle col-2 m-0 py-1 pl-0 pr-3">
-                      <span class="font-weight-normal">á $${this.products[i].price}</span>
-                      <span>${this.formatter.format(this.products[i].price * this.products[i].quantity)}</span>
+                      <span class="font-weight-normal">á $${store.products[i].price}</span>
+                      <span>${this.formatter.format(store.products[i].price * store.products[i].quantity)}</span>
                     </td>
                   </tr>`;
     }
