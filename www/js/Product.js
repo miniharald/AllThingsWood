@@ -13,6 +13,7 @@ class Product {
       e.preventDefault();
       this.cart.add(this);
       this.animation(`${this.id}`)
+      this.animationSound();
     });
   }
 
@@ -51,9 +52,9 @@ class Product {
     
   }
 
-  animation(id){
+animation(id){
 
-    let x = id -1 ;
+let x = id -1 ;
 var cart = $('.fa-shopping-cart');
 var imgtodrag = $(".item").find("img").eq(x);
 if(!imgtodrag.lenght){
@@ -93,10 +94,24 @@ if (imgtodrag) {
     });
 }
 
+}
+animationSound(){
+  let player = new Audio();
+  player.src = "https://actions.google.com/sounds/v1/cartoon/siren_whistle.ogg";
+  player.currentTime = 0.30;
+  player.play(); 
+  setTimeout(this.secondarySound, 1800);
+  
+  
 
+}
 
+secondarySound(){
+  let player = new Audio();
+  player.src = "https://actions.google.com/sounds/v1/cartoon/woodpecker.ogg";
+  player.currentTime = 0.50;
+  player.play();
 
-  }
-
+}
 
 }
