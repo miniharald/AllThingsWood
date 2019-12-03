@@ -46,7 +46,7 @@ class Cart {
         $(" a >span").text(this.count);
         store.products = this.products;
         //store.products = JSON.stringify(this.products)
-        store.save();
+        // store.save();
         //this.saveCart();
         return;
       }
@@ -55,7 +55,7 @@ class Cart {
     $(" a >span").text(this.count);
     store.products = this.products;
     //store.products = JSON.stringify(this.products)
-    store.save();
+    // store.save();
     //this.saveCart();
     console.log(store.products)
 

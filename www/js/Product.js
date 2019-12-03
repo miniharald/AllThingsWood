@@ -60,6 +60,7 @@ var imgtodrag = $(".item").find("img").eq(x);
 if(!imgtodrag.lenght){
   imgtodrag = $(".item").find("img").eq(0);
 }
+
 if (imgtodrag) {
     var imgclone = imgtodrag.clone().offset({
         top : imgtodrag.offset().top,
