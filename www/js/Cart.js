@@ -45,6 +45,7 @@ class Cart {
       if (store.products[i].id === product.id) {
         store.products[i].quantity++;
         $(" a >span").text(this.count);
+        this.discount()
         //store.products = JSON.stringify(store.products)
         store.save();
         //this.saveCart();
@@ -53,6 +54,7 @@ class Cart {
     }
     store.products.push(product)
     $(" a >span").text(this.count);
+    this.discount()
     //store.products = JSON.stringify(store.products)
     store.save();
     //this.saveCart();
@@ -118,6 +120,33 @@ class Cart {
   //  return productsCopy
   //}
 
+  discount() {
+    for (let product of store.products) {
+
+      let rowSum = product.price * product.quantity;
+      let discountSum = 0;
+
+      let [discountQuantity, _for] = product.discount || [];
+
+      if (discountQuantity) {
+
+        let numberOfDiscounts = Math.floor(product.quantity / discountQuantity);
+
+        discountSum = numberOfDiscounts * product.price * (discountQuantity - _for);
+
+        console.log('Discount', discountQuantity, 'for', _for, ' you save', discountSum);
+
+        rowSum -= discountSum;
+
+      }
+
+      console.log(product, 'rowSum', rowSum);
+
+      return discountSum
+
+    }
+  }
+
   test() {
 
     //let cartArray = store.products;
@@ -155,6 +184,7 @@ class Cart {
                     </div>
                     <section class="text-right font-weight-bolder">
                       Total Cart Cost: <span class="totalCartCost">${this.formatter.format(this.totalCartCost())}</span><br>
+                      Discount: <span>${this.formatter.format(this.discount())}</span><br>
                       Total Shipping Cost: <span>${this.formatter.format(this.totalShippingCost())}</span> <br>
   Total Cost: <span>${this.formatter.format(this.totalShippingCost() + this.totalCartCost())}</span>
                     </section>`);
