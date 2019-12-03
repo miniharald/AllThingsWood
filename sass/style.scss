@@ -31,3 +31,18 @@ h2 {
 .list {
   width: 3vw;
 }
+.block{
+  position: absolute;
+  border-radius: 10vw;
+  position: absolute;
+  background-color: aliceblue;
+  height: 0.40vh;
+  width: 3.50vw;
+  // margin-left: 0.20vw;
+  margin-top: 2.50vw;
+}
+.mainblock{
+  position: absolute;
+  width: 20vw;
+  border: solid black;
+}
