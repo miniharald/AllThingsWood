@@ -95,11 +95,18 @@ class Form {
               <!-- <button type="button" class="subscribe btn btn-secondary btn-block rounded-pill shadow-sm"> cancel  </button>
               <button type="button" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Confirm  </button>
               -->
+              <div class="row">
+              <div class="col text-right">
               <button type="button" class="btn btn-primary rounded-pill"><i class="fa fa-window-close"></i></i> Cancel order</button>
-              
-              <button type="button" class="btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Confirm order</button>
+              </div>
+              <div class="col text-left">
+              <button type="button" class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Confirm order</button>
+              </div>
+              </div>
             </form>
           </div>
+          
+
           <!-- End -->
 
           <!-- Paypal info -->
