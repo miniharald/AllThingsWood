@@ -7,7 +7,8 @@ class App {
       "cart": new Cart(),
       "confirm": new ConfirmationPage(),
       "form": new Form(),
-     
+      "thankyou": new Thankyou()
+      
     };
     this.cart = new Cart();
     $(window).on("hashchange", () => this.changeRoute());
