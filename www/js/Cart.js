@@ -143,11 +143,20 @@ class Cart {
 
       console.log(product, 'rowSum', rowSum);
 
-
-
     }
 
     return discountSum
+  }
+
+  taxes() {
+    let totalCost = 0;
+    for (let i in store.products) {
+      totalCost += store.products[i].price * store.products[i].quantity;
+    }
+    let taxes = totalCost * 0.25;
+    //let taxes = this.totalCartCost * 0.25;
+    //console.log(taxes)
+    return taxes;
   }
 
   test() {
@@ -188,9 +197,10 @@ class Cart {
                     </div>
                     <section class="text-right font-weight-bolder">
                       Total Cart Cost: <span class="totalCartCost">${this.formatter.format(this.totalCartCost())}</span><br>
+                      Taxes: <span>${this.formatter.format(this.taxes())}</span><br>
                       Discount: <span>${this.formatter.format(this.discount())}</span><br>
                       Total Shipping Cost: <span>${this.formatter.format(this.totalShippingCost())}</span> <br>
-  Total Cost: <span>${this.formatter.format(this.totalShippingCost() + this.totalCartCost())}</span>
+  Total Cost: <span>${this.formatter.format(this.totalShippingCost() + this.totalCartCost() + this.taxes() - this.discount())}</span>
                     </section>`);
 
     this.minusListener();
