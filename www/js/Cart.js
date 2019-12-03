@@ -44,6 +44,7 @@ class Cart {
       if (this.products[i].id === product.id) {
         this.products[i].quantity++;
         $(" a >span").text(this.count);
+<<<<<<< Updated upstream
         store.products = this.products;
         //store.products = JSON.stringify(this.products)
         // store.save();
@@ -53,6 +54,7 @@ class Cart {
     }
     this.products.push(product)
     $(" a >span").text(this.count);
+<<<<<<< Updated upstream
     store.products = this.products;
     //store.products = JSON.stringify(this.products)
     // store.save();
@@ -90,6 +92,7 @@ class Cart {
         console.log(this.products[i].id)
         this.products[i].quantity++;
         $(" a >span").text(this.count);
+        this.discount();
         this.test();
         //this.saveCart();
         break;
@@ -122,6 +125,28 @@ class Cart {
   //  }
   //  return productsCopy
   //}
+
+  discount() {
+    for (let product of store.products) {
+
+      let itemTotal = product.price * product.quantity;
+
+      let [discountQuantity, _for] = product.discount || [];
+
+      if (discountQuantity) {
+
+        let numberOfDiscounts = Math.floor(product.quantity / discountQuantity);
+
+        let discountSum = numberOfDiscounts * product.price * (discountQuantity - _for);
+
+        console.log('Discount', discountQuantity, 'for', _for, ' you save', discountSum);
+
+
+      }
+
+      return discountSum;
+    }
+  }
 
   test() {
 
@@ -160,9 +185,12 @@ class Cart {
                     </div>
                     <section class="text-right font-weight-bolder">
                       Total Cart Cost: <span class="totalCartCost">${this.formatter.format(this.totalCartCost())}</span><br>
+                      Total Discount: <span>${this.formatter.format(this.discount())}</span><br>
                       Total Shipping Cost: <span>${this.formatter.format(this.totalShippingCost())}</span> <br>
   Total Cost: <span>${this.formatter.format(this.totalShippingCost() + this.totalCartCost())}</span>
-                    </section>`);
+                    </section>
+                    <section class="text-center">
+                    <a href="#form" class="btn btn-info btn-dark cart">Order</a>`);
 
     this.minusListener();
     this.plusListener();
@@ -207,6 +235,7 @@ class Cart {
                     </div >
   <section class="text-right font-weight-bolder">
     Total Cart Cost: $<span class="totalCartCost">${this.totalCartCost()}</span><br>
+    Discount: $<span class="totalCartCost">${this.discount()}</span><br>
       Total Shipping Cost: $<span>${this.totalShippingCost()}</span><br>
         Total Cost: $<span>${this.totalShippingCost() + this.totalCartCost()}</span>
                     </section>`);
