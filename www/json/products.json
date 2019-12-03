@@ -45,6 +45,10 @@
     "weight": 0.07,
     "tag": "health",
     "short": "Healthy Bamboo Fiber",
+    "discount": [
+      3,
+      2
+    ],
     "quantity": 1
   },
   {
