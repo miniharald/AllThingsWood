@@ -45,7 +45,7 @@ class Cart {
       if (store.products[i].id === product.id) {
         store.products[i].quantity++;
         $(" a >span").text(this.count);
-        this.discount()
+        //this.discount()
         //store.products = JSON.stringify(store.products)
         store.save();
         //this.saveCart();
@@ -54,7 +54,7 @@ class Cart {
     }
     store.products.push(product)
     $(" a >span").text(this.count);
-    this.discount()
+    //this.discount()
     //store.products = JSON.stringify(store.products)
     store.save();
     //this.saveCart();
@@ -121,10 +121,11 @@ class Cart {
   //}
 
   discount() {
+    let discountSum
     for (let product of store.products) {
 
       let rowSum = product.price * product.quantity;
-      let discountSum = 0;
+      discountSum = 0;
 
       let [discountQuantity, _for] = product.discount || [];
 
@@ -142,12 +143,15 @@ class Cart {
 
       console.log(product, 'rowSum', rowSum);
 
-      return discountSum
+
 
     }
+
+    return discountSum
   }
 
   test() {
+    //this.discount()
 
     //let cartArray = store.products;
     //console.log(cartArray)
@@ -175,7 +179,7 @@ class Cart {
                   </tr>`;
     }
 
-    //console.log(output)
+    console.log(store.products)
 
     $('main').html(`<div>
                       <table class="table table-striped align-middle font-weight-bolder text-dark">
