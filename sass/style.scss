@@ -31,11 +31,6 @@ h2 {
 .list {
   width: 3vw;
 }
-<<<<<<< HEAD
-
-.fa-minus-circle, .fa-plus-circle{
-  cursor: pointer;
-=======
 .block{
   position: absolute;
   border-radius: 10vw;
@@ -50,5 +45,8 @@ h2 {
   position: absolute;
   width: 20vw;
   border: solid black;
->>>>>>> ad8c7cf38e8154e79638d0f3f153c8bc8487afff
+}
+
+.fa-minus-circle, .fa-plus-circle, .fa-trash{
+  cursor: pointer;
 }
