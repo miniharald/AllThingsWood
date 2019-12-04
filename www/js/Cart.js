@@ -45,6 +45,7 @@ class Cart {
       if (store.products[i].id === product.id) {
         store.products[i].quantity++;
         $(" a >span").text(this.count);
+        //this.discount()
         //store.products = JSON.stringify(store.products)
         store.save();
         //this.saveCart();
@@ -53,6 +54,7 @@ class Cart {
     }
     store.products.push(product)
     $(" a >span").text(this.count);
+    //this.discount()
     //store.products = JSON.stringify(store.products)
     store.save();
     //this.saveCart();
@@ -118,7 +120,47 @@ class Cart {
   //  return productsCopy
   //}
 
+  discount() {
+    let discountSum
+    for (let product of store.products) {
+
+      let rowSum = product.price * product.quantity;
+      discountSum = 0;
+
+      let [discountQuantity, _for] = product.discount || [];
+
+      if (discountQuantity) {
+
+        let numberOfDiscounts = Math.floor(product.quantity / discountQuantity);
+
+        discountSum = numberOfDiscounts * product.price * (discountQuantity - _for);
+
+        console.log('Discount', discountQuantity, 'for', _for, ' you save', discountSum);
+
+        rowSum -= discountSum;
+
+      }
+
+      console.log(product, 'rowSum', rowSum);
+
+    }
+
+    return discountSum
+  }
+
+  taxes() {
+    let totalCost = 0;
+    for (let i in store.products) {
+      totalCost += store.products[i].price * store.products[i].quantity;
+    }
+    let taxes = totalCost * 0.25;
+    //let taxes = this.totalCartCost * 0.25;
+    //console.log(taxes)
+    return taxes;
+  }
+
   test() {
+    //this.discount()
 
     //let cartArray = store.products;
     //console.log(cartArray)
@@ -146,7 +188,7 @@ class Cart {
                   </tr>`;
     }
 
-    //console.log(output)
+    console.log(store.products)
 
     $('main').html(`<div>
                       <table class="table table-striped align-middle font-weight-bolder text-dark">
@@ -155,8 +197,10 @@ class Cart {
                     </div>
                     <section class="text-right font-weight-bolder">
                       Total Cart Cost: <span class="totalCartCost">${this.formatter.format(this.totalCartCost())}</span><br>
+                      Taxes: <span>${this.formatter.format(this.taxes())}</span><br>
+                      Discount: <span>${this.formatter.format(this.discount())}</span><br>
                       Total Shipping Cost: <span>${this.formatter.format(this.totalShippingCost())}</span> <br>
-  Total Cost: <span>${this.formatter.format(this.totalShippingCost() + this.totalCartCost())}</span>
+  Total Cost: <span>${this.formatter.format(this.totalShippingCost() + this.totalCartCost() + this.taxes() - this.discount())}</span>
                     </section>`);
 
     this.minusListener();
