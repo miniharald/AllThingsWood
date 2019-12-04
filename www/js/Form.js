@@ -32,14 +32,14 @@ class Form {
           </li>
           <li class="nav-item">
             <a data-toggle="pill" href="#nav-tab-paypal" class="nav-link rounded-pill">
-                                <i class="fa fa-paypal"></i>
-                                Paypal
+                                <i class="fa fa-paper-plane"></i></i>
+                                Shipping
                             </a>
           </li>
           <li class="nav-item">
             <a data-toggle="pill" href="#nav-tab-bank" class="nav-link rounded-pill">
                                 <i class="fa fa-university"></i>
-                                 Bank Transfer
+                                Greeting
                              </a>
           </li>
         </ul>
@@ -51,7 +51,7 @@ class Form {
 
           <!-- credit card info-->
           <div id="nav-tab-card" class="tab-pane fade show active">
-            <p class="alert alert-success">Please fill in your details below</p>
+            <p class="alert alert-success">Please fill in your credit card information below</p>
             <form role="form">
               <div class="form-group">
                 <label for="username">Full name (on the card)</label>
@@ -97,10 +97,10 @@ class Form {
               -->
               <div class="row">
               <div class="col text-right">
-              <button type="button" class="btn btn-primary rounded-pill"><i class="fa fa-window-close"></i></i> Cancel order</button>
+             
               </div>
-              <div class="col text-left">
-              <button type="button" class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Confirm order</button>
+              <div class="col text-center">
+              <a href="#nav-tab-paypal" class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Next</a>
               </div>
               </div>
             </form>
@@ -111,32 +111,62 @@ class Form {
 
           <!-- Paypal info -->
           <div id="nav-tab-paypal" class="tab-pane fade">
-            <p>Paypal is easiest way to pay online</p>
-            <p>
-              <button type="button" class="btn btn-primary rounded-pill"><i class="fa fa-paypal mr-2"></i> Log into my Paypal</button>
-            </p>
-            <p class="text-muted">If you are already logged in to your paypall account, you will be redirected to your official paypal website.
-            </p>
+          <div id="nav-tab-card" class="tab-pane fade show active">
+          <p class="alert alert-success">Now enter your shipping details</p>
+          <form role="form">
+            <div class="form-group">
+              <label for="username">Country</label>
+              <input type="text" name="username" placeholder="USA" required class="form-control">
+            </div>
+            <form role="form">
+            <div class="form-group">
+              <label for="username">State</label>
+              <input type="text" name="username" placeholder="Wyoming" required class="form-control">
+            </div>
+            <form role="form">
+            <div class="form-group">
+              <label for="username">City</label>
+              <input type="text" name="username" placeholder="Green river" required class="form-control">
+            </div>
+            
+            <form role="form">
+            <div class="form-group">
+                    <label><span class="hidden-xs">Adress</span></label>
+                    <div class="input-group">
+                      <input type="number" placeholder="Streetname" name="" class="form-control" required>
+                      <input type="number" placeholder="Number" name="" class="form-control" required>
+                    </div>
+                  </div>
+            
+            
+              
+            <!-- <button type="button" class="subscribe btn btn-secondary btn-block rounded-pill shadow-sm"> cancel  </button>
+            <button type="button" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Confirm  </button>
+            -->
+            <div class="row">
+            <div class="col text-right">
+            
+            </div>
+            <div class="col text-left">
+            <button type="button" class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Next</button>
+            </div>
+            </div>
+          </form>
+        </div>
           </div>
           <!-- End -->
 
           <!-- bank transfer info -->
           <div id="nav-tab-bank" class="tab-pane fade">
-            <h6>Bank account details</h6>
-            <dl>
-              <dt>Bank</dt>
-              <dd> THE WORLD BANK</dd>
-            </dl>
-            <dl>
-              <dt>Account number</dt>
-              <dd>7775877975</dd>
-            </dl>
-            <dl>
-              <dt>IBAN</dt>
-              <dd>CZ774207713379</dd>
-            </dl>
-            <p class="text-muted">If this doesn't work, make sure to contact your bank, or select another payment option. 
-            </p>
+          <form role="form">
+          <div class="form-group">
+            <label for="username"><p class="alert alert-success">Words mean everything</p></label>
+            <p>Send a note to whoever recieves this box! Maximum 100 characters!  </p>
+            
+            <input type="text" name="username" placeholder="Write your message here" required class="form-control">
+            <br>
+            <button type="button" class="btn btn-primary rounded-pill"><i class="fa fa-window-close"></i></i> Finish order</button>
+          </div>
           </div>
           <!-- End -->
         </div>
