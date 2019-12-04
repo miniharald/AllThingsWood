@@ -75,6 +75,7 @@ class Cart {
         }
         $(" a >span").text(this.count);
         console.log(store.products)
+        store.save()
         this.render();
         break;
       }
@@ -89,8 +90,8 @@ class Cart {
         console.log(store.products[i].id)
         store.products[i].quantity++;
         $(" a >span").text(this.count);
+        store.save();
         this.render();
-        //this.saveCart();
         break;
       }
     }
@@ -101,6 +102,7 @@ class Cart {
       if (store.products[i].id == id) {
         store.products.splice(i, 1);
         $(" a >span").text(this.count);
+        store.save();
         this.render();
         break;
       }
