@@ -26,7 +26,7 @@ $("body").on('click', '.nav-item', e => {
  
   $( window ).resize(function() {
       $( ".block" ).animate({ "left":  selectedElement.offset().left }, 0 );
-      $(".block").width(position.outerWidth(true));
+      $(".block").width(`{currentId.outerWidth(true)}`);
       
   });
 

@@ -55,11 +55,12 @@ class Product {
 animation(id){
 
 let x = id -1 ;
-var cart = $('.fa-shopping-cart');
-var imgtodrag = $(".item").find("img").eq(x);
+let cart = $('.fa-shopping-cart');
+let imgtodrag = $(".item").find("img").eq(x);
+
 if(!imgtodrag.lenght){
-  imgtodrag = $(".item").find("img").eq(0);
-}
+  console.log("in if")
+  imgtodrag = $(".item").find("img").eq(0);}
 
 if (imgtodrag) {
     var imgclone = imgtodrag.clone().offset({
