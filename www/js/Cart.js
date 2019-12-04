@@ -201,6 +201,9 @@ class Cart {
                       Discount: <span>${this.formatter.format(this.discount())}</span><br>
                       Total Shipping Cost: <span>${this.formatter.format(this.totalShippingCost())}</span> <br>
   Total Cost: <span>${this.formatter.format(this.totalShippingCost() + this.totalCartCost() + this.taxes() - this.discount())}</span>
+                    </section>
+                    <section class="text-center">
+                      <a href="#form" class="btn btn-dark btn-primary text-light">Proceed to Checkout</a>
                     </section>`);
 
     this.minusListener();
