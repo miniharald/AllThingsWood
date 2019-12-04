@@ -73,7 +73,7 @@ class Cart {
         }
         $(" a >span").text(this.count);
         console.log(store.products)
-        this.test();
+        this.render();
         break;
       }
     }
@@ -87,7 +87,7 @@ class Cart {
         console.log(store.products[i].id)
         store.products[i].quantity++;
         $(" a >span").text(this.count);
-        this.test();
+        this.render();
         //this.saveCart();
         break;
       }
@@ -99,7 +99,7 @@ class Cart {
       if (store.products[i].id == id) {
         store.products.splice(i, 1);
         $(" a >span").text(this.count);
-        this.test();
+        this.render();
         break;
       }
     }
@@ -159,7 +159,7 @@ class Cart {
     return taxes;
   }
 
-  test() {
+  tableRowOutput() {
     //this.discount()
 
     //let cartArray = store.products;
@@ -188,27 +188,7 @@ class Cart {
                   </tr>`;
     }
 
-    console.log(store.products)
-
-    $('main').html(`<div>
-                      <table class="table table-striped align-middle font-weight-bolder text-dark">
-                        ${output}
-                      </table>
-                    </div>
-                    <section class="text-right font-weight-bolder">
-                      Total Cart Cost: <span class="totalCartCost">${this.formatter.format(this.totalCartCost())}</span><br>
-                      Taxes: <span>${this.formatter.format(this.taxes())}</span><br>
-                      Discount: <span>${this.formatter.format(this.discount())}</span><br>
-                      Total Shipping Cost: <span>${this.formatter.format(this.totalShippingCost())}</span> <br>
-  Total Cost: <span>${this.formatter.format(this.totalShippingCost() + this.totalCartCost() + this.taxes() - this.discount())}</span>
-                    </section>
-                    <section class="text-center">
-                      <a href="#form" class="btn btn-dark btn-primary text-light">Proceed to Checkout</a>
-                    </section>`);
-
-    this.minusListener();
-    this.plusListener();
-    this.trashListener();
+    return output;
   }
 
   minusListener() {
@@ -242,16 +222,31 @@ class Cart {
   }
 
   render(output) {
-    $('main').html(`< div class="table-responsive" >
-  <table class="table table-striped align-middle font-weight-bolder text-dark">
-    ${output}
-  </table>
-                    </div >
-  <section class="text-right font-weight-bolder">
-    Total Cart Cost: $<span class="totalCartCost">${this.totalCartCost()}</span><br>
-      Total Shipping Cost: $<span>${this.totalShippingCost()}</span><br>
-        Total Cost: $<span>${this.totalShippingCost() + this.totalCartCost()}</span>
+    output = this.tableRowOutput();
+
+    if (store.products.length == 0) {
+      output = " ";
+    }
+
+    $('main').html(`<div>
+                      <table class="table table-striped align-middle font-weight-bolder text-dark">
+                        ${output}
+                      </table>
+                    </div>
+                    <section class="text-right font-weight-bolder">
+                      Total Cart Cost: <span class="totalCartCost">${this.formatter.format(this.totalCartCost())}</span><br>
+                      Taxes: <span>${this.formatter.format(this.taxes())}</span><br>
+                      Discount: <span>${this.formatter.format(this.discount())}</span><br>
+                      Total Shipping Cost: <span>${this.formatter.format(this.totalShippingCost())}</span> <br>
+  Total Cost: <span>${this.formatter.format(this.totalShippingCost() + this.totalCartCost() + this.taxes() - this.discount())}</span>
+                    </section>
+                    <section class="text-center">
+                      <a href="#form" class="btn btn-primary text-light">Proceed to Checkout</a>
                     </section>`);
+
+    this.minusListener();
+    this.plusListener();
+    this.trashListener();
   }
 
 }
