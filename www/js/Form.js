@@ -96,11 +96,14 @@ class Form {
               <button type="button" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Confirm  </button>
               -->
               <div class="row">
-              <div class="col text-right">
+              
              
-              </div>
+              
               <div class="col text-center">
-              <a href="#nav-tab-paypal" class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Next</a>
+              
+              <a data-toggle="pill" href="#nav-tab-paypal" class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Next</a>
+
+              <!-- next-button -->
               </div>
               </div>
             </form>
@@ -143,14 +146,13 @@ class Form {
             <!-- <button type="button" class="subscribe btn btn-secondary btn-block rounded-pill shadow-sm"> cancel  </button>
             <button type="button" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Confirm  </button>
             -->
-            <div class="row">
-            <div class="col text-right">
             
+           
+
             </div>
-            <div class="col text-left">
-            <button type="button" class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Next</button>
-            </div>
-            </div>
+            <div class="col text-center">
+            <a data-toggle="pill" href="#nav-tab-bank" class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Next-greeting</a>
+           
           </form>
         </div>
           </div>
@@ -161,11 +163,14 @@ class Form {
           <form role="form">
           <div class="form-group">
             <label for="username"><p class="alert alert-success">Words mean everything</p></label>
-            <p>Send a note to whoever recieves this box! Maximum 100 characters!  </p>
+            <p>Send a note to whoever recieves this box!<br> Maximum 100 characters!  </p>
             
             <input type="text" name="username" placeholder="Write your message here" required class="form-control">
             <br>
-            <button type="button" class="btn btn-primary rounded-pill"><i class="fa fa-window-close"></i></i> Finish order</button>
+
+            
+            
+            <a href="#thankyou"  class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Next-greeting</a>
           </div>
           </div>
           <!-- End -->
