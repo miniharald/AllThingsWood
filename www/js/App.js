@@ -10,7 +10,7 @@ class App {
     this.cart = new Cart();
     $(window).on("hashchange", () => this.changeRoute());
     this.loadProducts();
-    this.cartListListener();
+    //this.cartListListener();
   }
 
   cartListListener() {
