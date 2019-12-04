@@ -153,7 +153,7 @@ class Cart {
     for (let i in store.products) {
       totalCost += store.products[i].price * store.products[i].quantity;
     }
-    let taxes = totalCost * 0.25;
+    let taxes = totalCost * 0.07;
     //let taxes = this.totalCartCost * 0.25;
     //console.log(taxes)
     return taxes;
