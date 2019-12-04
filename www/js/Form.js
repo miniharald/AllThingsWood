@@ -136,7 +136,7 @@ class Form {
             <div class="form-group">
                     <label><span class="hidden-xs">Adress</span></label>
                     <div class="input-group">
-                      <input type="number" placeholder="Streetname" name="" class="form-control" required>
+                      <input type="text" placeholder="Streetname" name="" class="form-control" required>
                       <input type="number" placeholder="Number" name="" class="form-control" required>
                     </div>
                   </div>
@@ -162,7 +162,9 @@ class Form {
           <div id="nav-tab-bank" class="tab-pane fade">
           <form role="form">
           <div class="form-group">
-            <label for="username"><p class="alert alert-success">Words mean everything</p></label>
+          <div>
+          <p class="alert alert-success">Words mean everything</p>
+            </div>
             <p>Send a note to whoever recieves this box!<br> Maximum 100 characters!  </p>
             
             <input type="text" name="username" placeholder="Write your message here" required class="form-control">
