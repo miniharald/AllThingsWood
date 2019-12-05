@@ -31,7 +31,7 @@ class Product {
           <button id="buy-button-${this.id}" class="btn btn-primary my-2">Buy</button>
         </div>
         <div class="col-12 col-lg-3 item">
-          <img class="img-fluid border border-primary rounded" src="${this.image}">
+          <img id="img-${this.id}" class="img-fluid border border-primary rounded" src="${this.image}">
         </div>
       </section>
     `);
@@ -44,7 +44,7 @@ class Product {
         <a href="#${this.slug}">
           <h4>${this.name} $${this.price} </h4>
           <button id="buy-button-${this.id}" class="btn btn-primary my-2 item">Buy</button>
-          <img class="img-fluid border border-primary rounded" src="${this.image}">
+          <img id="img-${this.id}" class="img-fluid border border-primary rounded" src="${this.image}">
         </a>
       </div>
       
@@ -54,9 +54,8 @@ class Product {
 
 animation(id){
 
-let x = id -1 ;
 let cart = $('.fa-shopping-cart');
-let imgtodrag = $(".item").find("img").eq(x);
+let imgtodrag = $(".item").find(`img-${id}`);
 
 if(!imgtodrag.lenght){
   console.log("in if")
