@@ -10,7 +10,13 @@
 
 // My own CSS (as little as possible)
 @import "sticky-footer";
+@media screen and (max-width: 800px)
 
+{
+
+.block { display: none; }
+
+}
 body {
   font-family: Poiret One;
 }

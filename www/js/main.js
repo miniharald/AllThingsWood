@@ -6,8 +6,6 @@ new App();
 
 
 // text animation
-
-//get element & id 
 currentId = "";
 selectedElement = "";
 $('.nav-item').click(function(){
@@ -15,18 +13,25 @@ $('.nav-item').click(function(){
   selectedElement = $(this);
 });
 
-
 $("body").on('click', '.nav-item', e => {
-  let me = $(e.target);
-  let getWidth = me.outerWidth(true);
-  $(".block").width( getWidth);
-  $( ".block" ).animate({  "left": me.offset().left }, "fast" );
+  $(".block").hide();
+  if( screenSize > 969){
+    $(".block").show();
+    let me = $(e.target);
+    let getWidth = me.outerWidth(true);
+    $(".block").width( getWidth);
+    $( ".block" ).animate({  "left": me.offset().left }, "fast" );
+  }else{
+    $( ".navbar-toggler-icon" ).trigger( "click" );
+    $(".block").hide();
+  }
   });
+
 
  
   $( window ).resize(function() {
       $( ".block" ).animate({ "left":  selectedElement.offset().left }, 0 );
-      $(".block").width(`{currentId.outerWidth(true)}`);
+      $(".block").width(`${currentId.outerWidth(true)}`);
       
   });
 
