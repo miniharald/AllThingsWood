@@ -31,9 +31,6 @@ $("body").on('click', '.nav-item', e => {
   });
 
 //hide navigation bar-animation on different pages
-$("body").on('click', '.nav-item', e => {
-  let me = $(e.target);
-  let getWidth = me.outerWidth(true);
-  $(".block").width( getWidth);
-  $( ".block" ).animate({  "left": me.offset().left }, "fast" );
+$("body").on('click', '.fa-shopping-cart', e => {
+  $(".block").hide();
   });
