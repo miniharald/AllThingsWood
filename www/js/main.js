@@ -6,10 +6,14 @@ new App();
 
 
 // text animation
-
+currentId = "";
+selectedElement = "";
+$('.nav-item').click(function(){
+  currentId = $(this).attr('id');
+  selectedElement = $(this);
+});
 
 $("body").on('click', '.nav-item', e => {
-  $( ".navbar-toggler-icon" ).trigger( "click" );
   $(".block").hide();
   if( screenSize > 969){
     $(".block").show();
@@ -17,14 +21,17 @@ $("body").on('click', '.nav-item', e => {
     let getWidth = me.outerWidth(true);
     $(".block").width( getWidth);
     $( ".block" ).animate({  "left": me.offset().left }, "fast" );
+  }else{
+    $( ".navbar-toggler-icon" ).trigger( "click" );
+    $(".block").hide();
   }
- 
   });
+
 
  
   $( window ).resize(function() {
       $( ".block" ).animate({ "left":  selectedElement.offset().left }, 0 );
-      $(".block").width(`{currentId.outerWidth(true)}`);
+      $(".block").width(`${currentId.outerWidth(true)}`);
       
   });
 
@@ -37,7 +44,7 @@ window.setInterval(function(){
       screenSize = $(window).width();
     }, 100)
 
-$("body").on('click', '#cartSelector ,navbar-toggler-icon', e => {
+$("body").on('click', '#cartSelector , navbar-toggler-icon,#check-selector', e => {
   $(".block").hide();
   });
 

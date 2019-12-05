@@ -2,6 +2,7 @@ class Form {
 
     render() {
       $('main').html(/*html*/`
+      
         <section class="row">
   
           <div class="col text-center"> 
@@ -20,7 +21,7 @@ class Form {
 
 
   <div class="row">
-    <div class="col-lg-7 mx-auto">
+    <div class="col-lg-7 mx-auto" id="check-selector">
       <div class="bg-white rounded-lg shadow-sm p-1">
         <!-- Credit card form tabs -->
         <ul role="tablist" class="nav bg-light nav-pills rounded-pill nav-fill mb-3">
@@ -198,6 +199,7 @@ class Form {
 
    
 }
+
     }
   
   
