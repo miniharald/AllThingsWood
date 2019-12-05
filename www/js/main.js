@@ -49,6 +49,14 @@ $("body").on('click', '#cartSelector , navbar-toggler-icon,#check-selector', e =
   $(".block").hide();
   });
 
+$("body").on('click', '#firstbutton', e => {
+        
+  $("#creditcard").removeClass("active")
+  $("#shipping").addClass("active")
+});
 
+$("body").on('click', '#secondbutton', e => {
   
-
+  $("#shipping").removeClass("active")
+  $("#greeting").addClass("active")
+});
