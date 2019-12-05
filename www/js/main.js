@@ -7,23 +7,17 @@ new App();
 
 // text animation
 
-//get element & id 
-currentId = "";
-selectedElement = "";
-$('.nav-item').click(function(){
-  currentId = $(this).attr('id');
-  selectedElement = $(this);
-});
-
-
-
 
 $("body").on('click', '.nav-item', e => {
-  $(".block").show();
-  let me = $(e.target);
-  let getWidth = me.outerWidth(true);
-  $(".block").width( getWidth);
-  $( ".block" ).animate({  "left": me.offset().left }, "fast" );
+  $(".block").hide();
+  if( screenSize > 969){
+    $(".block").show();
+    let me = $(e.target);
+    let getWidth = me.outerWidth(true);
+    $(".block").width( getWidth);
+    $( ".block" ).animate({  "left": me.offset().left }, "fast" );
+  }
+ 
   });
 
  
@@ -33,10 +27,19 @@ $("body").on('click', '.nav-item', e => {
       
   });
 
-  let screenSize = $(window).width();
-  console.log(screenSize);
+  
 
 //hide navigation bar-animation on different pages
-$("body").on('click', '#cartSelector', e => {
+
+let screenSize = "";
+window.setInterval(function(){
+      screenSize = $(window).width();
+    }, 100)
+
+$("body").on('click', '#cartSelector ,navbar-toggler-icon', e => {
   $(".block").hide();
   });
+
+
+  
+
