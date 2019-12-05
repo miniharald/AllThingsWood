@@ -101,7 +101,7 @@ class Form {
               
               <div class="col text-center">
               
-              <a data-toggle="pill" href="#nav-tab-paypal" class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Next</a>
+              <a id="firstbutton" data-toggle="pill" href="#nav-tab-paypal" class=" btn btn-primary rounded-pill"> <i class="fa fa-check-square"></i></i> Next</a>
 
               <!-- next-button -->
               </div>
@@ -151,7 +151,7 @@ class Form {
 
             </div>
             <div class="col text-center">
-            <a data-toggle="pill" href="#nav-tab-bank" class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Next-greeting</a>
+            <a id="secondbutton" data-toggle="pill" href="#nav-tab-bank" class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Next-greeting</a>
            
           </form>
         </div>
@@ -172,7 +172,7 @@ class Form {
 
             
             
-            <a href="#thankyou"  class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Next-greeting</a>
+            <a id="thirdbutton" href="#thankyou"  class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Next-page</a>
           </div>
           </div>
           <!-- End -->
@@ -195,6 +195,9 @@ class Form {
           </div>
         </section>
       `);
+
+   
+}
     }
   
   }

@@ -7,13 +7,14 @@ class Thankyou {
         <div class="col text-center">
         <img class="logo2 img-fluid pb-3" src="/images/thankyou.gif" alt="">
 
-        <p class="font-weight-bolder">Thank you for your order, we appreciate you a lot, especially when you order these fine wooden goods. You ordered from the right store, we hope that you will enjoy being a part of the wooden family, and if you ever need something wooden again, don’t hesitate to check out our inventory. it changes regularly, thank you again for supporting us through these dire times.
+        <p class="font-weight-bolder">Thank you for your order, if you ever need something wooden again, don’t hesitate to check out our inventory. It changes regularly! <br> 
+        Thank you again for supporting us through these dire times.
         <br>
         <br>
         
 
 
-        Thank you - The All Things Wood team 
+        Wood is good -The All Things Wood team 
         <br>
         <br>
         <br>
