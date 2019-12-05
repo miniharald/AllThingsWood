@@ -176,7 +176,7 @@ class Cart {
                       <img class="img-fluid border border-primary rounded list" src="${store.products[i].image}">
                     </td>
                     <td class="col-6 align-middle m-0 py-1 px-0">
-                      <a href="#${store.products[i].slug}">${store.products[i].name} - ${store.products[i].short}</a>
+                      ${store.products[i].name} - ${store.products[i].short}
                     </td>
                     <td class="align-middle col-3 row m-0 py-1 px-0">
                       <section class="col-2 m-0 p-0 text-right"><i class="fa fa-minus-circle"></i></section>
