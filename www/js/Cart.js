@@ -2,7 +2,7 @@ class Cart {
 
   constructor() {
     this.formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
-    store = JSON.parse(localStorage.store)
+    //store = JSON.parse(localStorage.store)
     store.products = store.products || []
     $(" a >span").text(this.count);
   }
@@ -176,7 +176,7 @@ class Cart {
                       <img class="img-fluid border border-primary rounded list" src="${store.products[i].image}">
                     </td>
                     <td class="col-6 align-middle m-0 py-1 px-0">
-                      ${store.products[i].name} - ${store.products[i].short}
+                      <a href="#${store.products[i].slug}">${store.products[i].name} - ${store.products[i].short}</a>
                     </td>
                     <td class="align-middle col-3 row m-0 py-1 px-0">
                       <section class="col-2 m-0 p-0 text-right"><i class="fa fa-minus-circle"></i></section>
