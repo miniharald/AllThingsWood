@@ -38,7 +38,7 @@ class Form {
           </li>
           <li class="nav-item">
             <a id="greeting" data-toggle="pill" href="#nav-tab-bank" class="nav-link rounded-pill">
-                                <i class="fa fa-university"></i>
+            <i class="fa fa-edit"></i> </i>
                                 Greeting
                              </a>
           </li>
@@ -101,7 +101,7 @@ class Form {
               
               <div class="col text-center">
               
-              <a id="firstbutton" data-toggle="pill" href="#nav-tab-paypal" class=" btn btn-primary rounded-pill"> <i class="fa fa-check-square"></i></i> Next</a>
+              <a id="firstbutton" data-toggle="pill" href="#nav-tab-paypal" class=" btn btn-primary rounded-pill"> <i class="fa fa-check-square"></i></i> Continue</a>
 
               <!-- next-button -->
               </div>
@@ -151,7 +151,7 @@ class Form {
 
             </div>
             <div class="col text-center">
-            <a id="secondbutton" data-toggle="pill" href="#nav-tab-bank" class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Next-greeting</a>
+            <a id="secondbutton" data-toggle="pill" href="#nav-tab-bank" class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Continue</a>
            
           </form>
         </div>
@@ -172,7 +172,7 @@ class Form {
 
             
             
-            <a id="thirdbutton" href="#thankyou"  class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Next-page</a>
+            <a id="thirdbutton" href="#thankyou"  class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Finish</a>
           </div>
           </div>
           <!-- End -->
