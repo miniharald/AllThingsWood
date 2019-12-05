@@ -44,7 +44,7 @@ class Product {
         <a href="#${this.slug}">
           <h4>${this.name} $${this.price} </h4>
           <button id="buy-button-${this.id}" class="btn btn-primary my-2 item">Buy</button>
-          <img id="img-${this.id}" class="img-fluid border border-primary rounded" src="${this.image}">
+          <img  id="img-${this.id}" class="img-fluid border border-primary rounded" src="${this.image}">
         </a>
       </div>
       
@@ -52,6 +52,52 @@ class Product {
     
   }
 
+animation(id){
+
+
+let cart = $('.fa-shopping-cart');
+let imgtodrag = $(".item").find(`img-${id}`);
+console.log(id);
+
+// if(!imgtodrag.lenght){
+//   console.log("in if")
+//   imgtodrag = $(".item").find("img").eq(0);}
+
+if (imgtodrag) {
+    var imgclone = imgtodrag.clone().offset({
+        top : imgtodrag.offset().top,
+        left : imgtodrag.offset().left
+    })
+        .css({
+        'opacity': '0.5',
+            'position': 'absolute',
+            'height': '150px',
+            'width': '150px',
+            'z-index': '100'
+    })
+        .appendTo($('main'))
+        .animate({
+        'top': cart.offset().top + 10,
+            'left': cart.offset().left + 10,
+            'width': 75,
+            'height': 75
+    }, 1000, 'easeInOutExpo');
+    
+    setTimeout(function () {
+        cart.effect("shake", {
+            times: 2
+        }, 200);
+    }, 1900);
+
+    imgclone.animate({
+        'width': 0,
+            'height': 0
+    }, function () {
+        $(this).detach()
+    });
+}
+
+}
 animation(id){
 
 let cart = $('.fa-shopping-cart');

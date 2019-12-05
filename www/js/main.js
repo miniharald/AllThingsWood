@@ -42,6 +42,7 @@ $("body").on('click', '.nav-item', e => {
 let screenSize = "";
 window.setInterval(function(){
       screenSize = $(window).width();
+      console.log(screenSize);
     }, 100)
 
 $("body").on('click', '#cartSelector , navbar-toggler-icon,#check-selector', e => {
