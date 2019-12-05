@@ -9,7 +9,6 @@ new App();
 
 
 $("body").on('click', '.nav-item', e => {
-  $( ".navbar-toggler-icon" ).trigger( "click" );
   $(".block").hide();
   if( screenSize > 969){
     $(".block").show();
