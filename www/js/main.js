@@ -30,3 +30,16 @@ $("body").on('click', '.nav-item', e => {
       
   });
 
+// här börjar koden för form buttons 
+
+$("body").on('click', '#firstbutton', e => {
+        
+  $("#creditcard").removeClass("active")
+  $("#shipping").addClass("active")
+});
+
+$("body").on('click', '#secondbutton', e => {
+  
+  $("#shipping").removeClass("active")
+  $("#greeting").addClass("active")
+});
