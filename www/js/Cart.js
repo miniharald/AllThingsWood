@@ -2,7 +2,7 @@ class Cart {
 
   constructor() {
     this.formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
-    store = JSON.parse(localStorage.store)
+    //store = JSON.parse(localStorage.store)
     store.products = store.products || []
     $(" a >span").text(this.count);
   }
