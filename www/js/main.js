@@ -17,6 +17,7 @@ $('.nav-item').click(function(){
 
 
 $("body").on('click', '.nav-item', e => {
+  $(".block").show();
   let me = $(e.target);
   let getWidth = me.outerWidth(true);
   $(".block").width( getWidth);
@@ -31,6 +32,6 @@ $("body").on('click', '.nav-item', e => {
   });
 
 //hide navigation bar-animation on different pages
-$("body").on('click', '.fa-shopping-cart', e => {
+$("body").on('click', '#cartSelector', e => {
   $(".block").hide();
   });
