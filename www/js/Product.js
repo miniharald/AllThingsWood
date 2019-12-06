@@ -68,13 +68,13 @@ class Product {
     return `
      
       <tr class="item row">
-            <td class="col-1 align-middle">
+            <td class="col-1 align-middle text-center">
               <img id="img-${this.id}" class="img-fluid border border-primary rounded list" src="${this.image}">
             </td>
-            <td class="col-8 align-middle font-weight-bolder"><a href="#${this.slug}"> ${this.name}</a></td>
-            <td class="col-2 align-text-bottom font-weight-bolder"><span>$${this.price}</span></td>
-            <td class="col-1 align-middle">
-              <button id="buy-button-${this.id}" class="font-weight-bolder text-light btn btn-primary my-2 item">Buy</button>
+            <td class="col-8 py-3 font-weight-bolder"><a href="#${this.slug}"> ${this.name}</a></td>
+            <td class="col-2 py-3 font-weight-bolder text-right"><span>$${this.price}</span></td>
+            <td class="col-1">
+              <button id="buy-button-${this.id}" class="btn-sm font-weight-bolder text-light btn btn-primary my-2 item">Buy</button>
             </td>
           </td>
       </tr>
