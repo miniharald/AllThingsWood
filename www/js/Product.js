@@ -24,17 +24,21 @@ class Product {
         </div>
       </section>
       <section class="row item">
-        <div class="col-12 col-lg-9">
-          <p>${this.description}</p>
-          <h4> $${this.price} </p>
-          <button id="buy-button-${this.id}" class="btn btn-primary my-2">Buy</button>
-        </div>
         <div class="col-12 col-lg-3 item">
           <img id="img-${this.id}" class="img-fluid border border-primary rounded" src="${this.image}">
         </div>
+        <div class="col-12 col-lg-9">
+          <h4 class="text-dark font-weight-bolder"> $${this.price} </h4>
+          <button id="buy-button-${this.id}" class="font-weight-bolder text-light btn btn-primary my-2">Buy</button>
+        </div>
+      </section>
+      <section class="row mt-2 ml-0 item text-dark font-weight-bolder">
+        <p>${this.description}</p>
       </section>
     `);
   }
+
+
 
   renderInList() {
 
