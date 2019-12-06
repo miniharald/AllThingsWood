@@ -175,17 +175,17 @@ class Cart {
                     <td class="text-center col-1 m-0 py-1 px-0">
                       <img class="img-fluid border border-primary rounded list" src="${store.products[i].image}">
                     </td>
-                    <td class="col-6 align-middle m-0 py-1 px-0">
+                    <td class="col-6 align-middle m-0 py-3 px-0">
                       <a href="#${store.products[i].slug}">${store.products[i].name} - ${store.products[i].short}</a>
                     </td>
-                    <td class="align-middle col-3 row m-0 py-1 px-0">
+                    <td class="align-middle col-3 row m-0 py-3 px-0">
                       <section class="col-2 m-0 p-0 text-right"><i class="fa fa-minus-circle"></i></section>
                       <span class="quantity col-3 p-0 m-0 text-center"> ${store.products[i].quantity} </span>
                       <section class="col-2 m-0 p-0"><i class="fa fa-plus-circle"></i></section>
                       <section class="col-5 m-0 p-0"><i class="fa fa-trash px-2"></i></section>
                       
                     </td>
-                    <td class="text-right align-middle col-2 m-0 py-1 pl-0 pr-3">
+                    <td class="text-right align-middle col-2 m-0 py-3 pl-0 pr-3">
                       <span class="font-weight-normal">á $${store.products[i].price}</span>
                       <span>${this.formatter.format(store.products[i].price * store.products[i].quantity)}</span>
                     </td>
@@ -233,7 +233,7 @@ class Cart {
     }
 
     $('main').html(`<div>
-                      <table class="table table-striped align-middle font-weight-bolder text-dark">
+                      <table class="table table-sm table-striped align-middle font-weight-bolder text-dark">
                         ${output}
                       </table>
                     </div>
