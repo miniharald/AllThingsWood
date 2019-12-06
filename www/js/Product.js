@@ -40,7 +40,7 @@ class Product {
 
 
 
-  renderInList() {
+  renderInListGrid() {
 
     return `
       <div class="col-12 col-md-6 col-lg-4 col-xl-3 mt-5 item">
@@ -61,9 +61,26 @@ class Product {
       </div>
       
     `
+  }
 
+  renderInListList() {
 
-
+    return `
+     
+      <tr class="item row">
+            <td class="col-1 align-middle">
+              <img id="img-${this.id}" class="img-fluid border border-primary rounded list" src="${this.image}">
+            </td>
+            <td class="col-8 align-middle font-weight-bolder"><a href="#${this.slug}"> ${this.name}</a></td>
+            <td class="col-2 align-text-bottom font-weight-bolder"><span>$${this.price}</span></td>
+            <td class="col-1 align-middle">
+              <button id="buy-button-${this.id}" class="font-weight-bolder text-light btn btn-primary my-2 item">Buy</button>
+            </td>
+          </td>
+      </tr>
+    
+      
+    `
   }
 
   animation(id) {
