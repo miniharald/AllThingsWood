@@ -33,7 +33,7 @@ class App {
   }
 
   changeRoute(e) {
-    e.preventDefault();
+    //e.preventDefault();
     let hash = location.hash.replace(/#/g, "");
     let hashFirstPart = hash.split("-")[0];
     let pageToShow = this.routes[hash] || this.routes.page404;

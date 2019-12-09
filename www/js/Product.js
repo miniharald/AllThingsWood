@@ -29,7 +29,7 @@ class Product {
         </div>
         <div class="col-12 col-lg-9">
           <h4 class="text-dark font-weight-bolder"> $${this.price} </h4>
-          <button id="buy-button-${this.id}" class="font-weight-bolder text-light btn btn-primary my-2">Buy</button>
+          <button id="buy-button-${this.id}" class="font-weight-bolder text-light btn btn-primary my-2">Add to Cart</button>
         </div>
       </section>
       <section class="row mt-2 ml-0 item text-dark font-weight-bolder">
@@ -53,7 +53,7 @@ class Product {
             <div class="card-body">
               <div class="text-right font-weight-bolder">$${this.price}</div>
               <div class="text-center">
-                <button id="buy-button-${this.id}" class="font-weight-bolder text-light btn btn-primary my-2 item">Buy</button>
+                <button id="buy-button-${this.id}" class="w-100 font-weight-bolder text-light btn btn-primary my-2 item">Add to Cart</button>
               </div>
             </div>
           </div >
@@ -74,7 +74,7 @@ class Product {
             <td class="col-8 py-3 font-weight-bolder"><a href="#${this.slug}"> ${this.name}</a></td>
             <td class="col-2 py-3 font-weight-bolder text-right"><span>$${this.price}</span></td>
             <td class="col-1">
-              <button id="buy-button-${this.id}" class="btn-sm font-weight-bolder text-light btn btn-primary my-2 item">Buy</button>
+              <button id="buy-button-${this.id}" class="btn-sm font-weight-bolder text-light btn btn-primary my-2 item">Add to Cart</button>
             </td>
           </td>
       </tr>
