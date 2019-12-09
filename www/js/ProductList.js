@@ -41,9 +41,7 @@ class ProductList {
           <i class="fa fa-list pl-2"></i>
         </4>
       </section>
-      <table class="table table-sm table-striped align-middle font-weight-bolder text-dark">
         ${this.products.map(product => product.renderInListList()).join('')}
-      </table>
     `);
 
     $("body").on('click', '.fa-th', e => {

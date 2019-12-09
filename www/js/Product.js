@@ -67,17 +67,16 @@ class Product {
 
     return `
      
-      <tr class="item row">
-            <td class="col-1 align-middle text-center">
+      <section class="item row listBorder">
+            <section class="col-1 py-2 align-middle text-center">
               <img id="img-${this.id}" class="img-fluid border border-primary rounded list" src="${this.image}">
-            </td>
-            <td class="col-8 py-3 font-weight-bolder"><a href="#${this.slug}"> ${this.name}</a></td>
-            <td class="col-2 py-3 font-weight-bolder text-right"><span>$${this.price}</span></td>
-            <td class="col-1">
+            </section>
+            <section class="col-9 py-3 font-weight-bolder"><a class="align-middle" href="#${this.slug}">${this.name}</a></section>
+            <section class="col-2 py-2 font-weight-bolder text-right text-primary"><span class="align-middle"><span>$${this.price}</span></span>
               <button id="buy-button-${this.id}" class="btn-sm font-weight-bolder text-light btn btn-primary my-2 item">Add to Cart</button>
-            </td>
-          </td>
-      </tr>
+            </section>
+          </section>
+      </section>
     
       
     `
