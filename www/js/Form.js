@@ -55,7 +55,7 @@ class Form {
             <form role="form">
               <div class="form-group">
                 <label for="username">Full name (on the card)</label>
-                <input type="text" name="username" placeholder="Jason Doe" required class="form-control">
+                <input id="fullName" type="text" name="username" placeholder="Jason Doe" required class="form-control">
               </div>
               <div class="form-group">
                 <label for="cardNumber">Card number</label>
@@ -119,25 +119,25 @@ class Form {
           <form role="form">
             <div class="form-group">
               <label for="username">Country</label>
-              <input type="text" name="username" placeholder="USA" required class="form-control">
+              <input id="country" type="text" name="username" placeholder="USA" required class="form-control">
             </div>
             <form role="form">
             <div class="form-group">
               <label for="username">State</label>
-              <input type="text" name="username" placeholder="Wyoming" required class="form-control">
+              <input id="state" type="text" name="username" placeholder="Wyoming" required class="form-control">
             </div>
             <form role="form">
             <div class="form-group">
               <label for="username">City</label>
-              <input type="text" name="username" placeholder="Green river" required class="form-control">
+              <input id="city" type="text" name="username" placeholder="Green river" required class="form-control">
             </div>
             
             <form role="form">
             <div class="form-group">
                     <label><span class="hidden-xs">Adress</span></label>
                     <div class="input-group">
-                      <input type="text" placeholder="Streetname" name="" class="form-control" required>
-                      <input type="number" placeholder="Number" name="" class="form-control" required>
+                      <input id="street" type="text" placeholder="Streetname" name="" class="form-control" required>
+                      <input id="streetNr" type="number" placeholder="Number" name="" class="form-control" required>
                     </div>
                   </div>
             
