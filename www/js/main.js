@@ -15,7 +15,7 @@ $('.nav-item').click(function () {
 
 $("body").on('click', '.nav-item', e => {
   $(".block").hide();
-  if (screenSize > 969) {
+  if (screenSize > 750) {
     $(".block").show();
     let me = $(e.target);
     let getWidth = me.outerWidth(true);

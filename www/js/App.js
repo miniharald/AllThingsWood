@@ -12,7 +12,7 @@ class App {
       
     };
     this.cart = new Cart();
-    $(window).on("hashchange", () => this.changeRoute());
+    $(window).on("hashchange", (e) => this.changeRoute(e));
     this.loadProducts();
     //this.cartListListener();
   }
@@ -30,7 +30,8 @@ class App {
     });
   }
 
-  changeRoute() {
+  changeRoute(e) {
+    e.preventDefault();
     let hash = location.hash.replace(/#/g, "");
     let hashFirstPart = hash.split("-")[0];
     let pageToShow = this.routes[hash] || this.routes.page404;

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="/style.css" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
 </head>
 
 <body>
@@ -20,12 +20,17 @@
       component that should not be placed inside
       a container -> row -> col structure... 
     -->
-    <nav class="d-flex navbar navbar-expand-lg navbar-light bg-primary navbar-dark">
+    <nav class="d-flex navbar navbar-expand-md navbar-light bg-primary navbar-dark">
       <a class="text-light flex-grow-1 navbar-brand" href="#">All Things Wood</a>
       <button class="mx-2 navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <a href="#cart" id="cartSelector" class=" d-flex align-items-center text-light btn btn-info btn-dark cart order-md-last">
+        <i class="fa fa-shopping-cart mr-1" aria-hidden="true"></i>
+        <section class="d-none d-sm-block">Cart</section>
+        <span class="text-light badge badge-pill badge-primary ml-1">0</span>
+      </a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item" id="start">
@@ -44,11 +49,11 @@
 
 
       </div>
-      <a href="#cart" id="cartSelector" class="d-flex align-items-center text-light btn btn-info btn-dark cart">
+      <!-- <a href="#cart" id="cartSelector" class="d-flex align-items-center text-light btn btn-info btn-dark cart">
         <i class="fa fa-shopping-cart mr-1" aria-hidden="true"></i>
         <section class="d-none d-sm-block">Cart</section>
         <span class="text-light badge badge-pill badge-primary ml-1">0</span>
-      </a>
+      </a> -->
 
 
 
