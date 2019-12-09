@@ -13,7 +13,9 @@
 @media screen and (max-width: 800px)
 
 {
-
+#nav-toggle{
+  outline: none;
+}
 .block { display: none; }
 
 }
