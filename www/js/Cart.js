@@ -172,20 +172,20 @@ class Cart {
     //console.log(output)
     for (let i in store.products) {
       output += `<tr class="row list-item" id="${store.products[i].id}">
-                    <td class="text-center col-1 m-0 py-1 px-0">
-                      <img class="img-fluid border border-primary rounded list" src="${store.products[i].image}">
+                    <td class="text-center d-none d-lg-block col-1 align-middle">
+                      <img class="img-fluid border border-primary rounded list align-middle" src="${store.products[i].image}">
                     </td>
-                    <td class="col-6 align-middle m-0 py-1 px-0">
-                      <a href="#${store.products[i].slug}">${store.products[i].name} - ${store.products[i].short}</a>
+                    <td class="col-6 m-0 py-3 px-2 px-lg-0">
+                      <a class="d-flex" href="#${store.products[i].slug}"><span>${store.products[i].name}</span><span class="pl-1 d-none d-sm-block"> - ${store.products[i].short}</span></a>
                     </td>
-                    <td class="align-middle col-3 row m-0 py-1 px-0">
+                    <td class="align-middle col-3 row m-0 py-3 px-0">
                       <section class="col-2 m-0 p-0 text-right"><i class="fa fa-minus-circle"></i></section>
                       <span class="quantity col-3 p-0 m-0 text-center"> ${store.products[i].quantity} </span>
                       <section class="col-2 m-0 p-0"><i class="fa fa-plus-circle"></i></section>
                       <section class="col-5 m-0 p-0"><i class="fa fa-trash px-2"></i></section>
                       
                     </td>
-                    <td class="text-right align-middle col-2 m-0 py-1 pl-0 pr-3">
+                    <td class="text-right align-middle col-3 col-lg-2 m-0 py-3 pl-0 pr-3">
                       <span class="font-weight-normal">á $${store.products[i].price}</span>
                       <span>${this.formatter.format(store.products[i].price * store.products[i].quantity)}</span>
                     </td>
@@ -233,7 +233,7 @@ class Cart {
     }
 
     $('main').html(`<div>
-                      <table class="table table-striped align-middle font-weight-bolder text-dark">
+                      <table class="table table-sm table-striped align-middle font-weight-bolder text-dark">
                         ${output}
                       </table>
                     </div>
@@ -245,7 +245,7 @@ class Cart {
   Total Cost: <span>${this.formatter.format(this.totalShippingCost() + this.totalCartCost() + this.taxes() - this.discount())}</span>
                     </section>
                     <section class="text-center">
-                      <a href="#form" class="btn btn-primary text-light">Proceed to Checkout</a>
+                      <a href="#form" class="btn btn-primary text-light font-weight-bolder">Proceed to Checkout</a>
                     </section>`);
 
     this.minusListener();
