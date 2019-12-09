@@ -44,6 +44,30 @@ h2 {
 .list {
   width: 3vw;
 }
+
+.order-icon {
+  background: url('images/orderhistorysmaller.png') no-repeat left top;
+  width: 1.7rem;
+  height: 1.8rem;
+  background-size: cover;
+  transition: color 0.15s ease-in-out, 
+  background-color 0.15s ease-in-out, 
+  border-color 0.15s ease-in-out, 
+  box-shadow 0.15s ease-in-out;
+}
+
+.order-icon:hover {
+  background-image: url(images/orderhistorysmallerhover.png);
+  transition: color 0.15s ease-in-out, 
+  background-color 0.15s ease-in-out, 
+  border-color 0.15s ease-in-out, 
+  box-shadow 0.15s ease-in-out;
+}
+
+.order-icon img {
+  height: 1.8rem;
+}
+
 .nav-item{
   position: relative;
 }
