@@ -6,11 +6,13 @@ class App {
       "page404": new Page404(),
       "cart": new Cart(),
       "confirm": new ConfirmationPage(),
-      
+
       "form": new Form(),
-      "thankyou": new Thankyou()
-      
-    };
+      "thankyou": new Thankyou(),
+      "orderlist": new OrderHistoryList(),
+
+
+    }
     this.cart = new Cart();
     $(window).on("hashchange", () => this.changeRoute());
     this.loadProducts();
