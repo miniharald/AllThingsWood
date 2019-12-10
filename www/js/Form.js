@@ -160,22 +160,17 @@ class Form {
 
           <!-- bank transfer info -->
           <div id="nav-tab-bank" class="tab-pane fade">
-          <form role="form">
-          <div class="form-group">
-          <div>
-          <p class="alert alert-success">Words mean everything</p>
+            <div class="form-group">
+              <div>
+                <p class="alert alert-success">Words mean everything</p>
+              </div>
+                <p>Send a note to whoever recieves this box!<br> Maximum 100 characters!  </p>
+                <input id="msg" type="text" name="username" placeholder="Write your message here" required class="form-control">
+                <br>
+                <a id="thirdbutton" href="#thankyou" class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Finish</a>
             </div>
-            <p>Send a note to whoever recieves this box!<br> Maximum 100 characters!  </p>
-            
-            <input type="text" name="username" placeholder="Write your message here" required class="form-control">
-            <br>
-
-            
-            
-            <a id="thirdbutton" href="#thankyou"  class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Finish</a>
-          </div>
-          </div>
-          <!-- End -->
+           </div>
+                <!-- End -->
         </div>
         <!-- End -->
 

@@ -6,13 +6,12 @@ class App {
       "page404": new Page404(),
       "cart": new Cart(),
       "confirm": new ConfirmationPage(),
-      
       "form": new Form(),
-      "thankyou": new Thankyou()
+      "thankyou": new Thankyou(),
       
     };
     this.cart = new Cart();
-    $(window).on("hashchange", (e) => this.changeRoute(e));
+    $(window).on("hashchange", () => this.changeRoute());
     this.loadProducts();
     //this.cartListListener();
   }
@@ -30,8 +29,7 @@ class App {
     });
   }
 
-  changeRoute(e) {
-    e.preventDefault();
+  changeRoute() {
     let hash = location.hash.replace(/#/g, "");
     let hashFirstPart = hash.split("-")[0];
     let pageToShow = this.routes[hash] || this.routes.page404;
