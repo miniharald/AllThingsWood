@@ -3,8 +3,6 @@
 // to be outside a class declaration
 new App();
 
-
-
 // text animation
 currentId = "";
 selectedElement = "";
@@ -22,12 +20,11 @@ $("body").on('click', '.nav-item', e => {
     $(".block").width(getWidth);
     $(".block").animate({ "left": me.offset().left }, "fast");
   } else {
+    
     $(".navbar-toggler-icon").trigger("click");
     $(".block").hide();
   }
 });
-
-
 
 $(window).resize(function () {
   $(".block").animate({ "left": selectedElement.offset().left }, 0);
@@ -35,44 +32,51 @@ $(window).resize(function () {
 
 });
 
-
-
 //hide navigation bar-animation on different pages
 
 let screenSize = "";
 window.setInterval(function () {
   screenSize = $(window).width();
 }, 100)
-// form click event's
+
 $("body").on('click', '#cartSelector , navbar-toggler-icon,#check-selector', e => {
   $(".block").hide();
 });
-
+// form click event's & save form info to localStorage
 $("body").on('click', '#firstbutton', e => {
 
-  store_fullName();
+  delivery_info.name = $("#fullName").val();
   $("#creditcard").removeClass("active")
   $("#shipping").addClass("active")
 });
 
 $("body").on('click', '#secondbutton', e => {
-  store_shipping_address();
+  delivery_info.addres.country = $("#country").val();
+  delivery_info.addres.state =$("#state").val();
+  delivery_info.addres.city =$("#city").val();
+  delivery_info.addres.streetName = $("#streetNr").val();
+  delivery_info.addres.streetNr = $("#streetNr").val();
   $("#shipping").removeClass("active")
   $("#greeting").addClass("active")
+  localStorage.setItem('deliveryInfo', JSON.stringify(delivery_info));
 });
-// save form info to localStorage
-function store_fullName(){
-  let fullName =$("#fullName").val();
-  localStorage.setItem("FullName", fullName); 
-}
+$("body").on('click', '#thirdbutton', e => {
+  let greet = $("#msg").val(); 
+  console.log(greet);
+  delivery_info.greeting = $("#msg").val();
 
-function store_shipping_address() {
-  let contry = $("#country").val();
-  localStorage.setItem("Country", contry);
-  let state =$("#state").val();
-  localStorage.setItem("State", state); 
-  let street =$("#street").val();
-  localStorage.setItem("Address", street); 
-  let streetNr = $("#streetNr").val();
-  localStorage.setItem("StreetNr", streetNr);
-}
+});
+
+
+let delivery_info = {
+   name: "",
+   addres: {
+     country: "",
+     state: "",
+     city: "",
+     streetName: "",
+     streetNr: "" 
+     },
+  greeting: ""
+
+  };

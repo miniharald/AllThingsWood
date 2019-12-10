@@ -2,6 +2,7 @@ class ProductList {
 
   constructor(products) {
     this.products = products;
+    this.formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
   }
 
   render() {
@@ -13,8 +14,8 @@ class ProductList {
       </section>
       <section class="font-weight-bolder text-dark">
         <h4>
-          <i class="fa fa-th pr-2"></i>
-          <i class="fa fa-list pl-2"></i>
+          <i class="fa fa-th pr-2"><span class="inside-i font-weight-bolder"> View in Grid</span></i>
+          <i class="fa fa-list pl-2"><span class="inside-i font-weight-bolder"> View in List</span></i>
         </4>
       </section>
       <section class="row">
@@ -37,8 +38,8 @@ class ProductList {
       </section>
       <section class="font-weight-bolder text-dark mb-5">
         <h4>
-          <i class="fa fa-th pr-2"></i>
-          <i class="fa fa-list pl-2"></i>
+          <i class="fa fa-th pr-2"><span class="inside-i font-weight-bolder"> View in Grid</span></i>
+          <i class="fa fa-list pl-2"><span class="inside-i font-weight-bolder"> View in List</span></i>
         </4>
       </section>
         ${this.products.map(product => product.renderInListList()).join('')}

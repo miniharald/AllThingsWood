@@ -4,6 +4,7 @@ class Product {
     Object.assign(this, data);
     this.cart = cart;
     this.addBuyButtonListener();
+    this.formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
 
   }
 
@@ -28,7 +29,7 @@ class Product {
           <img id="img-${this.id}" class="img-fluid border border-primary rounded" src="${this.image}">
         </div>
         <div class="col-12 col-lg-9">
-          <h4 class="text-dark font-weight-bolder"> $${this.price} </h4>
+          <h4 class="text-dark font-weight-bolder">${this.formatter.format(this.price)}</h4>
           <button id="buy-button-${this.id}" class="font-weight-bolder text-light btn btn-primary my-2">Add to Cart</button>
         </div>
       </section>
@@ -51,7 +52,7 @@ class Product {
             </div>
             <h5 class="card-title text-center font-weight-bolder">${this.name}</h5>
             <div class="card-body">
-              <div class="text-right font-weight-bolder">$${this.price}</div>
+              <div class="text-right font-weight-bolder">${this.formatter.format(this.price)}</div>
               <div class="text-center">
                 <button id="buy-button-${this.id}" class="w-100 font-weight-bolder text-light btn btn-primary my-2 item">Add to Cart</button>
               </div>
@@ -68,11 +69,11 @@ class Product {
     return `
      
       <section class="item row listBorder">
-            <section class="col-1 py-2 align-middle text-center">
-              <img id="img-${this.id}" class="img-fluid border border-primary rounded list" src="${this.image}">
+            <section class="col-2 col-md-1 py-4 py-md-2 align-middle text-center">
+              <img id="img-${this.id}" class="border border-primary rounded list" src="${this.image}">
             </section>
-            <section class="col-9 py-3 font-weight-bolder"><a class="align-middle" href="#${this.slug}">${this.name}</a></section>
-            <section class="col-2 py-2 font-weight-bolder text-right text-primary"><span class="align-middle"><span>$${this.price}</span></span>
+            <section class="col-5 col-md-7 py-3 font-weight-bolder"><a class="align-middle" href="#${this.slug}">${this.name}</a></section>
+            <section class="col-5 col-md-4 py-2 font-weight-bolder text-right text-primary"><span class="align-middle"><span>${this.formatter.format(this.price)}</span></span>
               <button id="buy-button-${this.id}" class="btn-sm font-weight-bolder text-light btn btn-primary my-2 item">Add to Cart</button>
             </section>
           </section>

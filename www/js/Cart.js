@@ -125,31 +125,24 @@ class Cart {
   //}
 
   discount() {
-    let discountSum
+    let discountTotal
     for (let product of store.products) {
 
-      let rowSum = product.price * product.quantity;
-      discountSum = 0;
-
+      let itemTotal = product.price * product.quantity;
+      discountTotal = 0;
       let [discountQuantity, _for] = product.discount || [];
 
       if (discountQuantity) {
-
         let numberOfDiscounts = Math.floor(product.quantity / discountQuantity);
+        discountTotal = numberOfDiscounts * product.price * (discountQuantity - _for);
 
-        discountSum = numberOfDiscounts * product.price * (discountQuantity - _for);
+        console.log('Discount', discountQuantity, 'for', _for, ' you save', discountTotal);
 
-        console.log('Discount', discountQuantity, 'for', _for, ' you save', discountSum);
-
-        rowSum -= discountSum;
-
+        itemTotal -= discountTotal;
       }
-
-      console.log(product, 'rowSum', rowSum);
-
     }
 
-    return discountSum
+    return discountTotal
   }
 
   taxes() {
@@ -171,32 +164,32 @@ class Cart {
     let output = '';
     //console.log(output)
     for (let i in store.products) {
-      output += `<tr class="row list-item" id="${store.products[i].id}">
-                    <td class="text-center d-none d-lg-block col-1 align-middle">
-                      <img class="img-fluid border border-primary rounded list align-middle" src="${store.products[i].image}">
-                    </td>
-                    <td class="col-6 m-0 py-3 px-2 px-lg-0">
-                      <a class="d-flex" href="#${store.products[i].slug}"><span>${store.products[i].name}</span><span class="pl-1 d-none d-sm-block"> - ${store.products[i].short}</span></a>
-                    </td>
-                    <td class="align-middle col-3 row m-0 py-3 px-0">
+      output += `<section class="row list-item font-weight-bolder listBorder text-dark" id="${store.products[i].id}">
+                    <section class="py-1 text-center d-none d-lg-block col-1 align-middle">
+                      <img class="border border-primary rounded list align-middle" src="${store.products[i].image}">
+                    </section>
+                    <section class="col-6 m-0 py-3 px-2 px-lg-0">
+                      <a class="d-flex" href="#${store.products[i].slug}"><span>${store.products[i].name}</span><span class="pl-1 d-none d-md-block"> - ${store.products[i].short}</span></a>
+                    </section>
+                    <section class="align-middle col-3 row m-0 py-3 px-0">
                       <section class="col-2 m-0 p-0 text-right"><i class="fa fa-minus-circle"></i></section>
                       <span class="quantity col-3 p-0 m-0 text-center"> ${store.products[i].quantity} </span>
                       <section class="col-2 m-0 p-0"><i class="fa fa-plus-circle"></i></section>
                       <section class="col-5 m-0 p-0"><i class="fa fa-trash px-2"></i></section>
                       
-                    </td>
-                    <td class="text-right align-middle col-3 col-lg-2 m-0 py-3 pl-0 pr-3">
+                    </section>
+                    <section class="text-right align-middle col-3 col-lg-2 m-0 py-3 pl-0 pr-3">
                       <span class="font-weight-normal">á $${store.products[i].price}</span>
                       <span>${this.formatter.format(store.products[i].price * store.products[i].quantity)}</span>
-                    </td>
-                  </tr>`;
+                    </section>
+                  </section>`;
     }
 
     return output;
   }
 
   minusListener() {
-    $('td').on('click', `.fa-minus-circle`, (e) => {
+    $('section').on('click', `.fa-minus-circle`, (e) => {
       //e.preventDefault();
       //console.log(e)
       let id = $(e.target).closest('.list-item').attr('id');
@@ -206,7 +199,7 @@ class Cart {
   }
 
   plusListener() {
-    $('td').on('click', `.fa-plus-circle`, (e) => {
+    $('section').on('click', `.fa-plus-circle`, (e) => {
       //e.preventDefault();
       //console.log(e)
       let id = $(e.target).closest('.list-item').attr('id');
@@ -216,7 +209,7 @@ class Cart {
   }
 
   trashListener() {
-    $('td').on('click', `.fa-trash`, (e) => {
+    $('section').on('click', `.fa-trash`, (e) => {
       //e.preventDefault();
       //console.log(e)
       let id = $(e.target).closest('.list-item').attr('id');
@@ -233,18 +226,16 @@ class Cart {
     }
 
     $('main').html(`<div>
-                      <table class="table table-sm table-striped align-middle font-weight-bolder text-dark">
                         ${output}
-                      </table>
                     </div>
-                    <section class="text-right font-weight-bolder">
+                    <section class="mt-2 text-right font-weight-bolder text-dark">
                       Total Cart Cost: <span class="totalCartCost">${this.formatter.format(this.totalCartCost())}</span><br>
                       Taxes: <span>${this.formatter.format(this.taxes())}</span><br>
                       Discount: <span>${this.formatter.format(this.discount())}</span><br>
                       Total Shipping Cost: <span>${this.formatter.format(this.totalShippingCost())}</span> <br>
   Total Cost: <span>${this.formatter.format(this.totalShippingCost() + this.totalCartCost() + this.taxes() - this.discount())}</span>
                     </section>
-                    <section class="text-center">
+                    <section class="text-center mt-5">
                       <a href="#form" class="btn btn-primary text-light font-weight-bolder">Proceed to Checkout</a>
                     </section>`);
 

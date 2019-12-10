@@ -19,9 +19,13 @@
 .block { display: none; }
 
 }
-body {
+body, .inside-i {
   
   font-family: Poiret One;
+}
+
+.inside-i {
+  font-size: 70%;
 }
 
 h1,
@@ -42,7 +46,7 @@ h2 {
 }
 
 .list {
-  width: 3vw;
+  width: 50px;
 }
 
 .order-icon {
