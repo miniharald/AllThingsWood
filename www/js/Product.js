@@ -72,8 +72,8 @@ class Product {
             <section class="col-1 py-2 align-middle text-center">
               <img id="img-${this.id}" class="img-fluid border border-primary rounded list" src="${this.image}">
             </section>
-            <section class="col-9 py-3 font-weight-bolder"><a class="align-middle" href="#${this.slug}">${this.name}</a></section>
-            <section class="col-2 py-2 font-weight-bolder text-right text-primary"><span class="align-middle"><span>${this.formatter.format(this.price)}</span></span>
+            <section class="col-8 py-3 font-weight-bolder"><a class="align-middle" href="#${this.slug}">${this.name}</a></section>
+            <section class="col-3 py-2 font-weight-bolder text-right text-primary"><span class="align-middle"><span>${this.formatter.format(this.price)}</span></span>
               <button id="buy-button-${this.id}" class="btn-sm font-weight-bolder text-light btn btn-primary my-2 item">Add to Cart</button>
             </section>
           </section>
