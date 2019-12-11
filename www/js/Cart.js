@@ -125,20 +125,14 @@ class Cart {
   //}
 
   discount() {
-    let discountTotal
+    let discountTotal = 0;
     for (let product of store.products) {
 
-      let itemTotal = product.price * product.quantity;
-      discountTotal = 0;
       let [discountQuantity, _for] = product.discount || [];
 
       if (discountQuantity) {
         let numberOfDiscounts = Math.floor(product.quantity / discountQuantity);
         discountTotal = numberOfDiscounts * product.price * (discountQuantity - _for);
-
-        console.log('Discount', discountQuantity, 'for', _for, ' you save', discountTotal);
-
-        itemTotal -= discountTotal;
       }
     }
 
