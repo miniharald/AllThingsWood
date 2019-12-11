@@ -1,5 +1,61 @@
 class Form {
 
+  constructor() {
+
+    //first button
+    $("body").on('click', '#firstbutton', e => {
+
+      delivery_info.name = $("#fullName").val();
+      $("#creditcard").removeClass("active")
+      $("#shipping").addClass("active")
+    });
+
+    //second button
+    $("body").on('click', '#secondbutton', e => {
+      delivery_info.addres.country = $("#country").val();
+      delivery_info.addres.state = $("#state").val();
+      delivery_info.addres.city = $("#city").val();
+      delivery_info.addres.streetName = $("#street").val();
+      delivery_info.addres.zipCode = $("#zipcode").val();
+      $("#shipping").removeClass("active")
+      $("#greeting").addClass("active")
+    });
+
+    //third button
+    $("body").on('click', '#thirdbutton', e => {
+      delivery_info.greeting = $("#msg").val();
+      let randomOrder = Math.floor(Math.random() * 7488734879);
+      delivery_info.orderNr = randomOrder;
+      delivery_info.date = current_date;
+      delivery_info.productList = JSON.parse(localStorage.store);
+      store.orderHistory.push(delivery_info)
+      store.products = [];
+      $(" a >span").text("0");
+      store.save();
+    });
+
+    store.orderHistory = store.orderHistory || [];
+
+    let delivery_info = {
+      name: "",
+      addres: {
+        country: "",
+        state: "",
+        city: "",
+        streetName: "",
+        zipCode: ""
+      },
+      greeting: "",
+      orderNr: "",
+      date: "",
+      productList: ""
+    };
+    //get current time
+    let today = new Date();
+    let current_date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
+  }
+
   render() {
     $('main').html(/*html*/`
         <section class="row">
@@ -55,12 +111,12 @@ class Form {
             <form role="form">
               <div class="form-group">
                 <label for="username">Full name (on the card)</label>
-                <input id="fullName" type="text" name="username" placeholder="Jason Doe" required class="form-control">
+                <input id="fullName" type="text" name="username" placeholder="Jason Doe" class="form-control">
               </div>
               <div class="form-group">
                 <label for="cardNumber">Card number</label>
                 <div class="input-group">
-                  <input type="text" name="cardNumber" placeholder="Your card number" class="form-control" required>
+                  <input type="text" name="cardNumber" placeholder="Your card number" class="form-control"  >
                   <div class="input-group-append">
                     <span class="input-group-text text-muted">
                                                 <i class="fa fa-cc-visa mx-1"></i>
@@ -75,8 +131,8 @@ class Form {
                   <div class="form-group">
                     <label><span class="hidden-xs">Expiration</span></label>
                     <div class="input-group">
-                      <input type="number" placeholder="MM" name="" class="form-control" required>
-                      <input type="number" placeholder="YY" name="" class="form-control" required>
+                      <input type="number" placeholder="MM" name="" class="form-control"  >
+                      <input type="number" placeholder="YY" name="" class="form-control"  >
                     </div>
                   </div>
                 </div>
@@ -85,7 +141,7 @@ class Form {
                     <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
                                                 <i class="fa fa-question-circle"></i>
                                             </label>
-                    <input type="text" required class="form-control">
+                    <input type="text"   class="form-control">
                   </div>
                 </div>
 
@@ -119,25 +175,25 @@ class Form {
           <form role="form">
             <div class="form-group">
               <label for="username">Country</label>
-              <input id="country" type="text" name="username" placeholder="USA" required class="form-control">
+              <input id="country" type="text" name="username" placeholder="USA"   class="form-control">
             </div>
             <form role="form">
             <div class="form-group">
               <label for="username">State</label>
-              <input id="state" type="text" name="username" placeholder="Wyoming" required class="form-control">
+              <input id="state" type="text" name="username" placeholder="Wyoming"   class="form-control">
             </div>
             <form role="form">
             <div class="form-group">
               <label for="username">City</label>
-              <input id="city" type="text" name="username" placeholder="Green river" required class="form-control">
+              <input id="city" type="text" name="username" placeholder="Green river"   class="form-control">
             </div>
             
             <form role="form">
             <div class="form-group">
                     <label><span class="hidden-xs">Adress</span></label>
                     <div class="input-group">
-                      <input id="street" type="text" placeholder="Streetname" name="" class="form-control" required>
-                      <input id="streetNr" type="number" placeholder="Number" name="" class="form-control" required>
+                      <input id="street" type="text" placeholder="Streetname" name="" class="form-control">
+                      <input id="zipcode" type="number" placeholder="Zip Code" name="" class="form-control">
                     </div>
                   </div>
             
@@ -165,7 +221,7 @@ class Form {
                 <p class="alert alert-success">Words mean everything</p>
               </div>
                 <p>Send a note to whoever recieves this box!<br> Maximum 100 characters!  </p>
-                <input id="msg" type="text" name="username" placeholder="Write your message here" required class="form-control">
+                <input id="msg" type="text" name="username" placeholder="Write your message here"   class="form-control">
                 <br>
                 <a id="thirdbutton" href="#thankyou" class=" btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Finish</a>
             </div>
@@ -195,11 +251,11 @@ class Form {
 
     /// ny kod 
 
-    
+
   }
 
 
 }
 
 
-  
+

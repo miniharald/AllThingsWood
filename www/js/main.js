@@ -42,35 +42,6 @@ window.setInterval(function () {
 $("body").on('click', '#cartSelector , navbar-toggler-icon,#check-selector', e => {
   $(".block").hide();
 });
-// form click event's & save form info to localStorage
-$("body").on('click', '#firstbutton', e => {
-
-  delivery_info.name = $("#fullName").val();
-  $("#creditcard").removeClass("active")
-  $("#shipping").addClass("active")
-});
-
-$("body").on('click', '#secondbutton', e => {
-  delivery_info.addres.country = $("#country").val();
-  delivery_info.addres.state = $("#state").val();
-  delivery_info.addres.city = $("#city").val();
-  delivery_info.addres.streetName = $("#streetNr").val();
-  delivery_info.addres.streetNr = $("#streetNr").val();
-  $("#shipping").removeClass("active")
-  $("#greeting").addClass("active")
-  localStorage.setItem('deliveryInfo', JSON.stringify(delivery_info));
-});
-$("body").on('click', '#thirdbutton', e => {
-  let greet = $("#msg").val();
-  store.products = [];
-  cart = this.cart;
-  $(" a >span").text("0");
-  console.log("main", store.products)
-  store.save();
-  console.log(greet);
-  delivery_info.greeting = $("#msg").val();
-
-});
 
 
 let delivery_info = {
