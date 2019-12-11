@@ -20,7 +20,7 @@ $("body").on('click', '.nav-item', e => {
     $(".block").width(getWidth);
     $(".block").animate({ "left": me.offset().left }, "fast");
   } else {
-    
+
     $(".navbar-toggler-icon").trigger("click");
     $(".block").hide();
   }
@@ -52,8 +52,8 @@ $("body").on('click', '#firstbutton', e => {
 
 $("body").on('click', '#secondbutton', e => {
   delivery_info.addres.country = $("#country").val();
-  delivery_info.addres.state =$("#state").val();
-  delivery_info.addres.city =$("#city").val();
+  delivery_info.addres.state = $("#state").val();
+  delivery_info.addres.city = $("#city").val();
   delivery_info.addres.streetName = $("#streetNr").val();
   delivery_info.addres.streetNr = $("#streetNr").val();
   $("#shipping").removeClass("active")
@@ -61,7 +61,12 @@ $("body").on('click', '#secondbutton', e => {
   localStorage.setItem('deliveryInfo', JSON.stringify(delivery_info));
 });
 $("body").on('click', '#thirdbutton', e => {
-  let greet = $("#msg").val(); 
+  let greet = $("#msg").val();
+  store.products = [];
+  cart = this.cart;
+  $(" a >span").text("0");
+  console.log("main", store.products)
+  store.save();
   console.log(greet);
   delivery_info.greeting = $("#msg").val();
 
@@ -69,14 +74,14 @@ $("body").on('click', '#thirdbutton', e => {
 
 
 let delivery_info = {
-   name: "",
-   addres: {
-     country: "",
-     state: "",
-     city: "",
-     streetName: "",
-     streetNr: "" 
-     },
+  name: "",
+  addres: {
+    country: "",
+    state: "",
+    city: "",
+    streetName: "",
+    streetNr: ""
+  },
   greeting: ""
 
-  };
+};
