@@ -28,6 +28,31 @@ class OrderHistoryList {
         <section class="col-2 text-dark font-weight-bolder">PRODUCT PRICE (NOT TOTAL) HERE</section>
       </section>`
             }
+            output += `<section class="row">
+        <section class="col-7">
+          <section class="row">
+            <section class="col-6">
+              <section class="row text-dark font-weight-bolder">Shipping:</section>
+              <section class="row text-dark font-weight-bolder">Discount:</section>
+              <section class="row text-dark font-weight-bolder mt-5">Total Cost:</section>
+            </section>
+            <section class="col-6">
+              <section class="row text-dark font-weight-bolder text-right">SHIPPING COST HERE</section>
+              <section class="row text-dark font-weight-bolder text-right">TOTAL DISCOUNT HERE</section>
+              <section class="row text-dark font-weight-bolder text-right mt-5">TOTAL COST HERE</section>
+            </section>
+          </section>
+        </section>
+        <section class="col-5">
+          <section class="row font-weight-bolder text-dark">Shipping Address</section>
+          <section class="row font-weight-bolder text-dark">BUYER NAME HERE</section>
+          <section class="row font-weight-bolder text-dark">BUYER ADDRESS HERE</section>
+          <section class="row font-weight-bolder text-dark">BUYER ZIP CODE & CITYHERE</section>
+          <section class="row font-weight-bolder text-dark">BUYER E-MAIL HERE</section>
+          <section class="row font-weight-bolder text-dark">BUYER PHONE# HERE</section>
+        </section>
+      </section>
+    </section>`
         }
         //console.log(output)
         //    for (let i in store.products) {
