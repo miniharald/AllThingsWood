@@ -1,14 +1,20 @@
 class OrderHistoryList {
 
-    constructor() {
-        this.formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
-    }
+  constructor() {
+    this.formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
 
-    rowOutput() {
-        let output = " "
-        console.log(store.orderHistory)
-        for (let order of store.orderHistory) {
-            output += `<section class="row font-weight-bolder listBorder py-2">
+    $("body").on('click', '.fa-sort', e => {
+      store.orderHistory.sort((a, b) => (a.date > b.date ? 1 : -1))
+      console.log(store.orderHistory)
+      this.render()
+    });
+  }
+
+  rowOutput() {
+    let output = " "
+    console.log(store.orderHistory)
+    for (let order of store.orderHistory) {
+      output += `<section class="row font-weight-bolder listBorder py-2">
                      <section class="col-2">${order.date}</section>
                      <section class="col-4">${order.orderNr}</section>
                      <section class="col-2">${order.quantity}</section>
@@ -16,23 +22,23 @@ class OrderHistoryList {
                      <section class="col-2"><i class="fa fa-chevron-down"></i></section>
                   </section>
                   `
-            output += `<section class="row listHeadBorder mt-5">
+      output += `<section class="row listHeadBorder mt-5">
         <section class="col-2"></section>
         <section class="col-6 text-dark font-weight-bolder"></section>
         <section class="col-2 text-center text-dark font-weight-bolder">${order.quantity}</section>
         <section class="col-2 text-dark font-weight-bolder">${this.formatter.format(order.totalCost)}</section>
       </section>`
 
-            for (let product of order.productList.products) {
-                output += `<section class="mb-5">
+      for (let product of order.productList.products) {
+        output += `<section class="mb-5">
       <section class="row listBorder">
         <section class="col-2 py-2"><img class="border border-primary rounded list align-middle" src="${product.image}"></section>
         <section class="col-6 py-3 align-middle text-dark font-weight-bolder">${product.name} - ${product.short}</section>
         <section class="col-2 py-3 align-middle text-center text-dark font-weight-bolder">${product.quantity}</section>
         <section class="col-2 py-3 align-middle text-right text-dark font-weight-bolder">${this.formatter.format(product.price)}</section>
       </section>`
-            }
-            output += `<section class="row">
+      }
+      output += `<section class="row">
         <section class="col-7">
           <section class="row">
             <section class="col-6">
@@ -57,26 +63,26 @@ class OrderHistoryList {
         </section>
       </section>
     </section>`
-        }
-        //console.log(output)
-        //    for (let i in store.products) {
-        //        output += `<section class="row">
-        //                     <section class="col">Datum</section>
-        //                     <section class="col">OrderNr</section>
-        //                     <section class="col">Antal köpta produkter</section>
-        //                     <section class="col">Total kostnad</section>
-        //                     <section class="col">Toggle ikon</section>
-        //                  </section>`;
-        //    }
-
-        return output;
     }
+    //console.log(output)
+    //    for (let i in store.products) {
+    //        output += `<section class="row">
+    //                     <section class="col">Datum</section>
+    //                     <section class="col">OrderNr</section>
+    //                     <section class="col">Antal köpta produkter</section>
+    //                     <section class="col">Total kostnad</section>
+    //                     <section class="col">Toggle ikon</section>
+    //                  </section>`;
+    //    }
 
-    render(output) {
+    return output;
+  }
 
-        output = this.rowOutput();
+  render(output) {
 
-        $('main').html(`
+    output = this.rowOutput();
+
+    $('main').html(`
                       <section class="row font-weight-bolder listHeadBorder py-2">
                         <section class="col-2">Datum <i class="fa fa-sort"></i></section>
                         <section class="col-4">Order</section>
@@ -85,7 +91,7 @@ class OrderHistoryList {
                         <section class="col-2"></section>
                        </section>
                         ${output}`);
-    }
+  }
 
 
 }
