@@ -1,14 +1,16 @@
 class OrderHistoryList {
 
     rowOutput() {
-        let output = `<section class="row font-weight-bolder listBorder py-2">
-                     <section class="col-2">Datum</section>
-                     <section class="col-4">OrderNr</section>
+        let output = " "
+        for(let i in store.orderHistory){
+        output += `<section class="row font-weight-bolder listBorder py-2">
+                     <section class="col-2">${store.orderHistory[i].date}</section>
+                     <section class="col-4">${store.orderHistory[i].orderNr}</section>
                      <section class="col-2">Antal köpta produkter</section>
                      <section class="col-2">Total kostnad</section>
                      <section class="col-2"><i class="fa fa-chevron-down"></i></section>
                   </section>`;
-        console.log(output)
+                }
         //    for (let i in store.products) {
         //        output += `<section class="row">
         //                     <section class="col">Datum</section>
