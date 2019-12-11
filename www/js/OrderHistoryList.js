@@ -50,10 +50,10 @@ class OrderHistoryList {
         <section class="col-5">
           <section class="row font-weight-bolder text-dark">Shipping Address</section>
           <section class="row font-weight-bolder text-dark">${order.name}</section>
-          <section class="row font-weight-bolder text-dark">${order.addres.streetName}</section>
-          <section class="row font-weight-bolder text-dark">${order.addres.zipCode} ${order.addres.city}</section>
-          <section class="row font-weight-bolder text-dark">BUYER E-MAIL HERE</section>
-          <section class="row font-weight-bolder text-dark">BUYER PHONE# HERE</section>
+          <section class="row font-weight-bolder text-dark">${order.address.streetName}</section>
+          <section class="row font-weight-bolder text-dark">${order.address.zipCode} ${order.address.city}</section>
+          <section class="row font-weight-bolder text-dark">${order.mail}</section>
+          <section class="row font-weight-bolder text-dark">${order.phone}</section>
         </section>
       </section>
     </section>`

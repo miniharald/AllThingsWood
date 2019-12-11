@@ -1,4 +1,4 @@
-class Form extends Cart{
+class Form extends Cart {
 
   constructor() {
     super()
@@ -6,32 +6,36 @@ class Form extends Cart{
     this.count();
     this.totalShippingCost();
     this.discount();
-  
+
 
     //first button
     $("body").on('click', '#firstbutton', e => {
-      delivery_info.discount =  this.discount();
-      delivery_info.shippingCost = this.totalShippingCost();
-      delivery_info.quantity = this.count();
-      delivery_info.totalCost = this.totalCartCost();
-      delivery_info.name = $("#fullName").val();
+
       $("#creditcard").removeClass("active")
       $("#shipping").addClass("active")
     });
 
     //second button
     $("body").on('click', '#secondbutton', e => {
-      delivery_info.addres.country = $("#country").val();
-      delivery_info.addres.state = $("#state").val();
-      delivery_info.addres.city = $("#city").val();
-      delivery_info.addres.streetName = $("#street").val();
-      delivery_info.addres.zipCode = $("#zipcode").val();
+
       $("#shipping").removeClass("active")
       $("#greeting").addClass("active")
     });
 
     //third button
     $("body").on('click', '#thirdbutton', e => {
+      console.log("last button")
+      delivery_info.address.country = $("#country").val();
+      delivery_info.mail = $("#mail").val();
+      delivery_info.phone = $("#phone").val();
+      delivery_info.address.city = $("#city").val();
+      delivery_info.address.streetName = $("#street").val();
+      delivery_info.address.zipCode = $("#zipcode").val();
+      delivery_info.discount = this.discount();
+      delivery_info.shippingCost = this.totalShippingCost();
+      delivery_info.quantity = this.count();
+      delivery_info.totalCost = this.totalCartCost();
+      delivery_info.name = $("#fullName").val();
       delivery_info.greeting = $("#msg").val();
       let randomOrder = Math.floor(Math.random() * 7488734879);
       delivery_info.orderNr = randomOrder;
@@ -47,9 +51,10 @@ class Form extends Cart{
 
     let delivery_info = {
       name: "",
-      addres: {
+      mail: "",
+      phone: "",
+      address: {
         country: "",
-        state: "",
         city: "",
         streetName: "",
         zipCode: ""
@@ -59,8 +64,8 @@ class Form extends Cart{
       date: "",
       productList: "",
       quantity: "",
-      totalCost:"",
-      shippingCost:"",
+      totalCost: "",
+      shippingCost: "",
       discount: ""
 
     };
@@ -171,7 +176,7 @@ class Form extends Cart{
               
               <div class="col text-center">
               
-              <a id="firstbutton" data-toggle="pill" href="#nav-tab-paypal" class="font-weight-bolder btn btn-primary rounded-pill"> <i class="fa fa-check-square"></i></i> Continue</a>
+              
 
               <!-- next-button -->
               </div>
@@ -209,7 +214,7 @@ class Form extends Cart{
             
             <form role="form">
             <div class="form-group">
-                    <label><span class="hidden-xs">Adress</span></label>
+                    <label><span class="hidden-xs">Address</span></label>
                     <div class="input-group">
                       <input id="street" type="text" placeholder="Streetname" name="" class="form-control">
                       <input id="zipcode" type="number" placeholder="Zip Code" name="" class="form-control">
@@ -226,7 +231,7 @@ class Form extends Cart{
 
             </div>
             <div class="col text-center">
-            <a id="secondbutton" data-toggle="pill" href="#nav-tab-bank" class="font-weight-bolder btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Continue</a>
+            
            
           </form>
         </div>
