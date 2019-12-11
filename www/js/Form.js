@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Form extends Cart {
 
   constructor() {
@@ -7,10 +8,19 @@ class Form extends Cart {
     this.totalShippingCost();
     this.discount();
 
+=======
+class Form {
+
+  constructor() {
+>>>>>>> parent of 19048f8... v1.5
 
     //first button
     $("body").on('click', '#firstbutton', e => {
 
+<<<<<<< HEAD
+=======
+      delivery_info.name = $("#fullName").val();
+>>>>>>> parent of 19048f8... v1.5
       $("#creditcard").removeClass("active")
       $("#shipping").addClass("active")
     });
@@ -62,12 +72,16 @@ class Form extends Cart {
       greeting: "",
       orderNr: "",
       date: "",
+<<<<<<< HEAD
       productList: "",
       quantity: "",
       totalCost: "",
       shippingCost: "",
       discount: ""
 
+=======
+      productList: ""
+>>>>>>> parent of 19048f8... v1.5
     };
     //get current time
     let today = new Date();
