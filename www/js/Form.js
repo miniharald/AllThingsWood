@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 class Form extends Cart {
 
@@ -9,27 +8,10 @@ class Form extends Cart {
     this.count();
     this.totalShippingCost();
     this.discount();
-=======
-class Form {
-
-  constructor() {
->>>>>>> parent of 19048f8... v1.5
-=======
-class Form {
-
-  constructor() {
->>>>>>> parent of 19048f8... v1.5
 
     //first button
     $("body").on('click', '#firstbutton', e => {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 19048f8... v1.5
-=======
->>>>>>> parent of 19048f8... v1.5
       delivery_info.name = $("#fullName").val();
       $("#creditcard").removeClass("active")
       $("#shipping").addClass("active")
@@ -82,25 +64,17 @@ class Form {
       greeting: "",
       orderNr: "",
       date: "",
-<<<<<<< HEAD
-<<<<<<< HEAD
       productList: "",
       quantity: "",
       totalCost: "",
       shippingCost: "",
       discount: ""
-
-=======
-      productList: ""
->>>>>>> parent of 19048f8... v1.5
-=======
-      productList: ""
->>>>>>> parent of 19048f8... v1.5
-    };
+    }
     //get current time
     let today = new Date();
     let current_date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
+    
   }
 
   render() {
