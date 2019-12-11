@@ -66,28 +66,21 @@ class Cart {
 
   reduceItemQuantity(id) {
     for (let i in store.products) {
-      //console.log(store.products[i])
       if (store.products[i].id == id) {
-        //console.log(store.products[i].id)
-        store.products[i].quantity--;
-        if (store.products[i].quantity == 0) {
-          store.products.splice(i, 1);
+        if (store.products[i].quantity > 1) {
+          store.products[i].quantity--;
         }
         $(" a >span").text(this.count);
-        console.log(store.products)
         store.save()
         this.render();
         break;
       }
     }
-    //this.saveCart();
   }
 
   addItemQuantity(id) {
     for (let i in store.products) {
-      console.log(store.products[i])
       if (store.products[i].id == id) {
-        console.log(store.products[i].id)
         store.products[i].quantity++;
         $(" a >span").text(this.count);
         store.save();
@@ -125,20 +118,14 @@ class Cart {
   //}
 
   discount() {
-    let discountTotal
+    let discountTotal = 0;
     for (let product of store.products) {
 
-      let itemTotal = product.price * product.quantity;
-      discountTotal = 0;
       let [discountQuantity, _for] = product.discount || [];
 
       if (discountQuantity) {
         let numberOfDiscounts = Math.floor(product.quantity / discountQuantity);
         discountTotal = numberOfDiscounts * product.price * (discountQuantity - _for);
-
-        console.log('Discount', discountQuantity, 'for', _for, ' you save', discountTotal);
-
-        itemTotal -= discountTotal;
       }
     }
 
