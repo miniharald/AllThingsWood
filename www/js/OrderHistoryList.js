@@ -11,16 +11,16 @@ class OrderHistoryList {
             output += `<section class="row font-weight-bolder listBorder py-2">
                      <section class="col-2">${order.date}</section>
                      <section class="col-4">${order.orderNr}</section>
-                     <section class="col-2">Antal köpta produkter</section>
-                     <section class="col-2">Total kostnad</section>
+                     <section class="col-2">${order.quantity}</section>
+                     <section class="col-2">${this.formatter.format(order.totalCost)}</section>
                      <section class="col-2"><i class="fa fa-chevron-down"></i></section>
                   </section>
                   `
             output += `<section class="row listHeadBorder mt-5">
         <section class="col-2"></section>
         <section class="col-6 text-dark font-weight-bolder"></section>
-        <section class="col-2 text-center text-dark font-weight-bolder">Quantity</section>
-        <section class="col-2 text-dark font-weight-bolder">á Price</section>
+        <section class="col-2 text-center text-dark font-weight-bolder">${order.quantity}</section>
+        <section class="col-2 text-dark font-weight-bolder">${this.formatter.format(order.totalCost)}</section>
       </section>`
 
             for (let product of order.productList.products) {
@@ -41,9 +41,9 @@ class OrderHistoryList {
               <section class="row text-dark font-weight-bolder mt-5">Total Cost:</section>
             </section>
             <section class="col-6">
-              <section class="row text-dark font-weight-bolder text-right">SHIPPING COST HERE</section>
-              <section class="row text-dark font-weight-bolder text-right">TOTAL DISCOUNT HERE</section>
-              <section class="row text-dark font-weight-bolder text-right mt-5">TOTAL COST HERE</section>
+              <section class="row text-dark font-weight-bolder text-right">${this.formatter.format(order.shippingCost)}</section>
+              <section class="row text-dark font-weight-bolder text-right">${this.formatter.format(order.discount)}</section>
+              <section class="row text-dark font-weight-bolder text-right mt-5">${this.formatter.format(order.totalCost)}</section>
             </section>
           </section>
         </section>
