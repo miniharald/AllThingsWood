@@ -15,7 +15,7 @@ class Cart {
 
 
 
-  get count() {
+    count() {
     let cartCount = 0;
     for (let i in store.products) {
       cartCount += store.products[i].quantity;

@@ -1,10 +1,19 @@
-class Form {
+class Form extends Cart{
 
   constructor() {
+    super()
+    this.totalCartCost();
+    this.count();
+    this.totalShippingCost();
+    this.discount();
+  
 
     //first button
     $("body").on('click', '#firstbutton', e => {
-
+      delivery_info.discount =  this.discount();
+      delivery_info.shippingCost = this.totalShippingCost();
+      delivery_info.quantity = this.count();
+      delivery_info.totalCost = this.totalCartCost();
       delivery_info.name = $("#fullName").val();
       $("#creditcard").removeClass("active")
       $("#shipping").addClass("active")
@@ -48,7 +57,12 @@ class Form {
       greeting: "",
       orderNr: "",
       date: "",
-      productList: ""
+      productList: "",
+      quantity: "",
+      totalCost:"",
+      shippingCost:"",
+      discount: ""
+
     };
     //get current time
     let today = new Date();
