@@ -1,5 +1,9 @@
 class OrderHistoryList {
 
+    constructor() {
+        this.formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+    }
+
     rowOutput() {
         let output = " "
         console.log(store.orderHistory)
@@ -12,20 +16,20 @@ class OrderHistoryList {
                      <section class="col-2"><i class="fa fa-chevron-down"></i></section>
                   </section>
                   `
-
-            for (let product of order.productList.products) {
-                output += `<section class="">
-      <section class="row listBorder">
+            output += `<section class="row listHeadBorder mt-5">
         <section class="col-2"></section>
         <section class="col-6 text-dark font-weight-bolder"></section>
-        <section class="col-2 text-dark font-weight-bolder">Quantity</section>
+        <section class="col-2 text-center text-dark font-weight-bolder">Quantity</section>
         <section class="col-2 text-dark font-weight-bolder">á Price</section>
-      </section>
+      </section>`
+
+            for (let product of order.productList.products) {
+                output += `<section class="mb-5">
       <section class="row listBorder">
-        <section class="col-2"><img class="border border-primary rounded list align-middle" src="${product.image}"></section>
-        <section class="col-6 text-dark font-weight-bolder">PRODUCT NAME & SHORT HERE</section>
-        <section class="col-2 text-dark font-weight-bolder">PRODUCT QUANTITY HERE</section>
-        <section class="col-2 text-dark font-weight-bolder">PRODUCT PRICE (NOT TOTAL) HERE</section>
+        <section class="col-2 py-2"><img class="border border-primary rounded list align-middle" src="${product.image}"></section>
+        <section class="col-6 py-3 align-middle text-dark font-weight-bolder">${product.name} - ${product.short}</section>
+        <section class="col-2 py-3 align-middle text-center text-dark font-weight-bolder">${product.quantity}</section>
+        <section class="col-2 py-3 align-middle text-right text-dark font-weight-bolder">${this.formatter.format(product.price)}</section>
       </section>`
             }
             output += `<section class="row">
@@ -45,9 +49,9 @@ class OrderHistoryList {
         </section>
         <section class="col-5">
           <section class="row font-weight-bolder text-dark">Shipping Address</section>
-          <section class="row font-weight-bolder text-dark">BUYER NAME HERE</section>
-          <section class="row font-weight-bolder text-dark">BUYER ADDRESS HERE</section>
-          <section class="row font-weight-bolder text-dark">BUYER ZIP CODE & CITYHERE</section>
+          <section class="row font-weight-bolder text-dark">${order.name}</section>
+          <section class="row font-weight-bolder text-dark">${order.addres.streetName}</section>
+          <section class="row font-weight-bolder text-dark">${order.addres.zipCode} ${order.addres.city}</section>
           <section class="row font-weight-bolder text-dark">BUYER E-MAIL HERE</section>
           <section class="row font-weight-bolder text-dark">BUYER PHONE# HERE</section>
         </section>
