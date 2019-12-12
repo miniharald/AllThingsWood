@@ -11,9 +11,21 @@ class Form extends Cart {
 
     $("body").on("click", '.fa-chevron-down', function(){
       let nr = $(this).attr('id');
-      console.log(nr)
-      $(`.toToggle-${nr}`).fadeToggle()
+      let clas = $(this).attr('class')
+      $(this).removeClass("fa fa-chevron-down")
+      $(this).addClass('fa fa-chevron-up');
+      $(`.toToggle-${nr}`).slideToggle("slow")
     });
+
+
+    $("body").on("click", '.fa-chevron-up', function(){
+      let nr = $(this).attr('id');
+      let clas = $(this).attr('class')
+      $(this).removeClass("fa fa-chevron-up")
+      $(this).addClass('fa fa-chevron-down');
+      $(`.toToggle-${nr}`).slideToggle("slow")
+    });
+    
     
    
     //first button
