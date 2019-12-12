@@ -40,12 +40,12 @@ class OrderHistoryList {
       output += `<section class="row mb-5 mt-2" >
         <section class="col-6 col-md-7">
           <section class="row">
-            <section class="pl-4 col-6 col-sm-3 col-lg-2">
+            <section class="pl-4 col-6 col-sm-4 col-lg-2">
               <section class="row text-dark font-weight-bolder">Shipping:</section>
               <section class="row text-dark font-weight-bolder">Discount:</section>
               <section class="row text-dark font-weight-bolder mt-5">Total Cost:</section>
             </section>
-            <section class="col-6 pl-4 col-sm-9 col-lg-10">
+            <section class="col-6 pl-4 col-sm-8 col-lg-10">
               <section class="row text-dark font-weight-bolder text-right">${this.formatter.format(order.shippingCost)}</section>
               <section class="row text-dark font-weight-bolder text-right">${this.formatter.format(order.discount)}</section>
               <section class="row text-dark font-weight-bolder text-right mt-5">${this.formatter.format(order.totalCost)}</section>
