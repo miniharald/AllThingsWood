@@ -5,6 +5,16 @@ class Cart {
     //store = JSON.parse(localStorage.store)
     store.products = store.products || []
     $(" a >span").text(this.count);
+
+    //checkout button
+    $("body").on('click', '.checkoutBtn', e => {
+      if (store.products.length == 0) {
+        e.preventDefault();
+        $("#alert").removeClass("d-none")
+      }
+
+    });
+
   }
 
 
@@ -223,7 +233,10 @@ class Cart {
   Total Cost: <span>${this.formatter.format(this.totalShippingCost() + this.totalCartCost() + this.taxes() - this.discount())}</span>
                     </section>
                     <section class="text-center mt-5">
-                      <a href="#form" class="btn btn-primary text-light font-weight-bolder">Proceed to Checkout</a>
+                      <div id="alert" class="font-weight-bolder d-none alert bg-primary text-light my-3" role="alert">
+                        You forgot to buy something!
+                      </div>
+                      <a href="#form" class="btn btn-primary text-light font-weight-bolder checkoutBtn">Proceed to Checkout</a>
                     </section>`);
 
     this.minusListener();
