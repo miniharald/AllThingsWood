@@ -50,7 +50,7 @@ h2 {
 }
 
 .logo1 {
-  width: 500px;
+  width: 25vw;
 }
 .logo2 {
   width: 230px;
@@ -92,7 +92,6 @@ h2 {
   border-top:2px solid #f5f5c8;
   widows: 2vw;
   bottom:30%;
-  // width: 3.50vw;
 }
 
 .fa-minus-circle, .fa-plus-circle, .fa-trash, .fa-th, .fa-list{
@@ -109,4 +108,10 @@ h2 {
 .ordertoggle{
   display: none;
 }
-
+.mainRow{
+  height: 38vh;
+  width: 50vh;
+}
+.fontSize{
+  font-size: small;
+}
