@@ -12,23 +12,24 @@ class OrderHistoryList {
   rowOutput() {
     let output = " "
     for (let order of store.orderHistory) {
-      output += `<section class="row font-weight-bolder listBorder py-2">
+      output += `</div>
+      <section class="row font-weight-bolder listBorder py-2">
                      <section class="col-2">${order.date}</section>
                      <section class="col-4 getNr">${order.orderNr}</section>
                      <section class="col-2">${order.quantity}</section>
                      <section class="col-2">${this.formatter.format(order.totalCost)}</section>
-                     <section class="col-2"  ><i id="${order.orderNr}" class="fa fa-chevron-down"></i></section>
+                     <section class="col-2" ><i id="${order.orderNr}" class="fa fa-chevron-down"></i></section>
                   </section>
-                  `
-      output += `<section class="row listHeadBorder mt-5 toToggle-${order.orderNr}">
+                  <div class="toToggle-${order.orderNr} ordertoggle">
+                  <section class="row listHeadBorder mt-5">
         <section class="col-2"></section>
         <section class="col-6 text-dark font-weight-bolder"></section>
         <section class="col-2 text-center text-dark font-weight-bolder">Quantity</section>
-        <section class="col-2 text-dark font-weight-bolder text-right">Price Piece</section>
+        <section class="col-2 text-dark font-weight-bolder ">Price Piece</section>
       </section>`
 
       for (let product of order.productList.products) {
-        output += `<section class="mb-5 toToggle-${order.orderNr}">
+        output += `<section class="mb-5 toToggle-${order.orderNr} ordertoggle">
       <section class="row listBorder" >
         <section class="col-2 py-2"><img class="border border-primary rounded list align-middle" src="${product.image}"></section>
         <section class="col-6 py-3 align-middle text-dark font-weight-bolder">${product.name} - ${product.short}</section>
@@ -36,7 +37,7 @@ class OrderHistoryList {
         <section class="col-2 py-3 align-middle text-right text-dark font-weight-bolder">${this.formatter.format(product.price)}</section>
       </section>`
       }
-      output += `<section class="row ordertoggle toToggle-${order.orderNr}" >
+      output += `<section class="row toToggle-${order.orderNr} ordertoggle " >
         <section class="col-7">
           <section class="row">
             <section class="col-6">
@@ -60,7 +61,9 @@ class OrderHistoryList {
           <section class="row font-weight-bolder text-dark">${order.phone}</section>
         </section>
       </section>
-    </section>`
+    </section>
+    </div>
+    </div>`
     }
     //console.log(output)
     //    for (let i in store.products) {
