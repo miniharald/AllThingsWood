@@ -73,6 +73,10 @@ class Form extends Cart {
     let today = new Date();
     let current_date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
+    $("body").on('click', '#firstCancel', e => {
+      this.removeAllProductFromCart()
+      console.log(this.storeLenght);
+    });
     
   }
 
@@ -196,10 +200,9 @@ class Form extends Cart {
               <div class="row d-flex">
               
              
-              <a id="firstCancel" data-toggle="pill" href="" class=" ml-5 font-weight-bolder btn btn-primary rounded-pill"></i></i>Cancel Order</a>
+              <a href="3000/#shop" id="firstCancel" data-toggle="pill"  class=" ml-5 font-weight-bolder btn btn-primary rounded-pill"></i></i>Cancel Order</a>
               
               <div class="col text-center  d-flex justify-content-end ">
-              
               <a id="firstbutton" data-toggle="pill" href="#nav-tab-paypal" class=" mr-5 font-weight-bolder btn btn-primary rounded-pill "> <i class="fa fa-check-square"></i></i> Continue</a>
               
 
@@ -253,10 +256,12 @@ class Form extends Cart {
             -->
             
            
-
             </div>
+
+            
             <div class="col text-center">
-            <a id="secondbutton" data-toggle="pill" href="#nav-tab-bank" class="font-weight-bolder btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Continue</a>
+            <a id="firstCancel" data-toggle="pill" href="3000/#shop" class="  sticky-top font-weight-bolder btn btn-primary rounded-pill"></i></i>Cancel Order</a>
+            <a id="secondbutton" data-toggle="pill" href="#nav-tab-bank" class="font-weight-bolder btn btn-primary rounded-pill "><i class="fa fa-check-square"></i></i> Continue</a>
            
           </form>
         </div>

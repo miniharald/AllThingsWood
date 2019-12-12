@@ -113,6 +113,8 @@ class Cart {
     //this.saveCart();
   }
 
+  
+
   //listCart() {
   //  let productsCopy = [];
   //  for (let i in store.products) {
@@ -242,6 +244,13 @@ class Cart {
     this.minusListener();
     this.plusListener();
     this.trashListener();
+  }
+
+  removeAllProductFromCart() {
+    console.log(store.products.length)
+    store.products = [];
+    $(" a >span").text("0");
+    store.save();
   }
 
 }
