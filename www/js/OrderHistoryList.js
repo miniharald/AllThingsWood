@@ -29,7 +29,7 @@ class OrderHistoryList {
       </section>`
 
       for (let product of order.productList.products) {
-        output += `<section class="mb-5 toToggle-${order.orderNr} ordertoggle">
+        output += `<section class="mb-5">
       <section class="row listBorder" >
         <section class="col-2 py-2"><img class="border border-primary rounded list align-middle" src="${product.image}"></section>
         <section class="col-6 py-3 align-middle text-dark font-weight-bolder">${product.name} - ${product.short}</section>
@@ -37,7 +37,7 @@ class OrderHistoryList {
         <section class="col-2 py-3 align-middle text-right text-dark font-weight-bolder">${this.formatter.format(product.price)}</section>
       </section>`
       }
-      output += `<section class="row toToggle-${order.orderNr} ordertoggle " >
+      output += `<section class="row" >
         <section class="col-7">
           <section class="row">
             <section class="col-6">
