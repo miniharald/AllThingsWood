@@ -254,8 +254,9 @@ class Form extends Cart {
 
             </div>
             <div class="col text-center">
-            <a id="secondbutton" data-toggle="pill" href="#nav-tab-bank" class="font-weight-bolder btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Continue</a>
            
+            <a id="secondbutton" data-toggle="pill" href="#nav-tab-bank" class="font-weight-bolder btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Continue</a>
+            <a id="cancel" data-toggle="pill" href="" class="font-weight-bolder btn btn-primary rounded-pill"></i></i>Cancel Order</a>
           </form>
         </div>
           </div>
