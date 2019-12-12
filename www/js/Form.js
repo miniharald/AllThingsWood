@@ -193,13 +193,15 @@ class Form extends Cart {
               <!-- <button type="button" class="subscribe btn btn-secondary btn-block rounded-pill shadow-sm"> cancel  </button>
               <button type="button" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Confirm  </button>
               -->
-              <div class="row">
+              <div class="row d-flex">
               
              
+              <a id="firstCancel" data-toggle="pill" href="" class=" ml-5 font-weight-bolder btn btn-primary rounded-pill"></i></i>Cancel Order</a>
               
-              <div class="col text-center">
+              <div class="col text-center  d-flex justify-content-end ">
               
-              <a id="firstbutton" data-toggle="pill" href="#nav-tab-paypal" class="font-weight-bolder btn btn-primary rounded-pill"> <i class="fa fa-check-square"></i></i> Continue</a>
+              <a id="firstbutton" data-toggle="pill" href="#nav-tab-paypal" class=" mr-5 font-weight-bolder btn btn-primary rounded-pill "> <i class="fa fa-check-square"></i></i> Continue</a>
+              
 
               <!-- next-button -->
               </div>
