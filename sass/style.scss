@@ -102,9 +102,18 @@ h2 {
   border-bottom: 3px solid #27380c;
 }
 
+.listOrderHeadBorder{
+  border-bottom: 1px solid #27380c;
+}
+
 .listBorder{
   border-bottom: 1px dotted #27380c;
 }
+
+.listOrderBorder{
+  border-top: 1px dotted #27380c;
+}
+
 .ordertoggle{
   display: none;
 }
