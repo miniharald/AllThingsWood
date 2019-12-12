@@ -74,8 +74,10 @@ class Form extends Cart {
     let current_date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
     $("body").on('click', '#firstCancel', e => {
+      $("#fullName,#cardNr,#MM,#YY,#CVV,#mail,#phone,#country,#city,#street,#zipcode").val(""); 
       this.removeAllProductFromCart()
       console.log(this.storeLenght);
+     
     });
     
   }
@@ -127,7 +129,19 @@ class Form extends Cart {
         <!-- Credit card form tabs -->
         <ul role="tablist" class="font-weight-bolder nav bg-light nav-pills rounded-pill nav-fill mb-3">
           <li class="nav-item">
-            <a id="creditcard" data-toggle="pill" href="#nav-tab-card" class="nav-link active rounded-pill">
+            <a id="creditcard" data-toggle="pill"
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            href="#nav-tab-card" class="nav-link active rounded-pill">
                                 <i class="fa fa-credit-card"></i>
                                 Credit Card
                             </a>
@@ -162,7 +176,7 @@ class Form extends Cart {
               <div class="form-group">
                 <label for="cardNumber">Card number</label>
                 <div class="input-group">
-                  <input type="text" name="cardNumber" placeholder="Your card number" class="form-control"  >
+                  <input id="cardNr" type="text" name="cardNumber" placeholder="Your card number" class="form-control"  >
                   <div class="input-group-append">
                     <span class="input-group-text text-muted">
                                                 <i class="fa fa-cc-visa mx-1"></i>
@@ -177,9 +191,9 @@ class Form extends Cart {
                   <div class="form-group">
                     <label><span class="hidden-xs">Expiration</span></label>
                     <div class="input-group">
-                      <input type="number" placeholder="MM" name="" class="form-control"  >
-                      <input type="number" placeholder="YY" name="" class="form-control"  >
-                    </div>
+                      <input id="MM" type="number" placeholder="MM" name="" class="form-control"  >
+                      <input id="YY" type="number" placeholder="YY" name="" class="form-control"  >
+                    </div>  
                   </div>
                 </div>
                 <div class="col-sm-4">
@@ -187,7 +201,7 @@ class Form extends Cart {
                     <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
                                                 <i class="fa fa-question-circle"></i>
                                             </label>
-                    <input type="text"   class="form-control">
+                    <input id="CVV" type="text"   class="form-control">
                   </div>
                 </div>
 
@@ -197,12 +211,12 @@ class Form extends Cart {
               <!-- <button type="button" class="subscribe btn btn-secondary btn-block rounded-pill shadow-sm"> cancel  </button>
               <button type="button" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Confirm  </button>
               -->
-              <div class="row d-flex">
+              <div >
               
              
-              <a href="3000/#shop" id="firstCancel" data-toggle="pill"  class=" ml-5 font-weight-bolder btn btn-primary rounded-pill"></i></i>Cancel Order</a>
               
-              <div class="col text-center  d-flex justify-content-end ">
+              <div class="col text-center ">
+              <a href="#shop" id="firstCancel"   class=" ml-5 font-weight-bolder btn btn-primary rounded-pill"></i></i>Cancel Order</a>
               <a id="firstbutton" data-toggle="pill" href="#nav-tab-paypal" class=" mr-5 font-weight-bolder btn btn-primary rounded-pill "> <i class="fa fa-check-square"></i></i> Continue</a>
               
 
@@ -260,7 +274,7 @@ class Form extends Cart {
 
             
             <div class="col text-center">
-            <a id="firstCancel" data-toggle="pill" href="3000/#shop" class="  sticky-top font-weight-bolder btn btn-primary rounded-pill"></i></i>Cancel Order</a>
+            <a id="firstCancel"  href="#shop" class="  sticky-top font-weight-bolder btn btn-primary rounded-pill"></i></i>Cancel Order</a>
             <a id="secondbutton" data-toggle="pill" href="#nav-tab-bank" class="font-weight-bolder btn btn-primary rounded-pill "><i class="fa fa-check-square"></i></i> Continue</a>
            
           </form>
