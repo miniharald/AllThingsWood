@@ -42,17 +42,3 @@ window.setInterval(function () {
 $("body").on('click', '#cartSelector , navbar-toggler-icon,#check-selector', e => {
   $(".block").hide();
 });
-
-
-let delivery_info = {
-  name: "",
-  addres: {
-    country: "",
-    state: "",
-    city: "",
-    streetName: "",
-    streetNr: ""
-  },
-  greeting: ""
-
-};

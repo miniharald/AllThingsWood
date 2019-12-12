@@ -19,34 +19,31 @@ class Form extends Cart {
 
     //second button
     $("body").on('click', '#secondbutton', e => {
-
-      $("#shipping").removeClass("active")
-      $("#greeting").addClass("active")
-    });
-
-    //third button
-    $("body").on('click', '#thirdbutton', e => {
-      console.log("last button")
       delivery_info.address.country = $("#country").val();
       delivery_info.mail = $("#mail").val();
       delivery_info.phone = $("#phone").val();
       delivery_info.address.city = $("#city").val();
       delivery_info.address.streetName = $("#street").val();
       delivery_info.address.zipCode = $("#zipcode").val();
+      $("#shipping").removeClass("active")
+      $("#greeting").addClass("active")
+    });
+
+    //third button
+    $("body").on('click', '#thirdbutton', e => {
+       delivery_info.greeting = $("#msg").val();
       delivery_info.discount = this.discount();
       delivery_info.shippingCost = this.totalShippingCost();
       delivery_info.quantity = this.count();
       delivery_info.totalCost = this.totalCartCost();
-      delivery_info.name = $("#fullName").val();
-      delivery_info.greeting = $("#msg").val();
       let randomOrder = Math.floor(Math.random() * 7488734879);
       delivery_info.orderNr = randomOrder;
       delivery_info.date = current_date;
       delivery_info.productList = JSON.parse(localStorage.store);
       store.orderHistory.push(delivery_info)
       store.products = [];
-      $(" a >span").text("0");
       store.save();
+      $(" a >span").text("0");
     });
 
     store.orderHistory = store.orderHistory || [];
@@ -178,7 +175,7 @@ class Form extends Cart {
               
               <div class="col text-center">
               
-              
+              <a id="firstbutton" data-toggle="pill" href="#nav-tab-paypal" class="font-weight-bolder btn btn-primary rounded-pill"> <i class="fa fa-check-square"></i></i> Continue</a>
 
               <!-- next-button -->
               </div>
@@ -216,7 +213,7 @@ class Form extends Cart {
             
             <form role="form">
             <div class="form-group">
-                    <label><span class="hidden-xs">Address</span></label>
+                    <label><span class="hidden-xs">Adress</span></label>
                     <div class="input-group">
                       <input id="street" type="text" placeholder="Streetname" name="" class="form-control">
                       <input id="zipcode" type="number" placeholder="Zip Code" name="" class="form-control">
@@ -233,7 +230,7 @@ class Form extends Cart {
 
             </div>
             <div class="col text-center">
-            
+            <a id="secondbutton" data-toggle="pill" href="#nav-tab-bank" class="font-weight-bolder btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Continue</a>
            
           </form>
         </div>
@@ -282,6 +279,3 @@ class Form extends Cart {
 
 
 }
-
-
-
