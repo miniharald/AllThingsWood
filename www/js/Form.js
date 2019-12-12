@@ -9,8 +9,16 @@ class Form extends Cart {
     this.totalShippingCost();
     this.discount();
 
+    $("body").on("click", '.fa-chevron-down', function(){
+      let nr = $(this).attr('id');
+      console.log(nr)
+      $(`.toToggle-${nr}`).fadeToggle()
+    });
+    
+   
     //first button
     $("body").on('click', '#firstbutton', e => {
+      delivery_info = this.getEmptyDeliveryInfo();
 
       delivery_info.name = $("#fullName").val();
       $("#creditcard").removeClass("active")
@@ -48,7 +56,16 @@ class Form extends Cart {
 
     store.orderHistory = store.orderHistory || [];
 
-    let delivery_info = {
+    let delivery_info = this.getEmptyDeliveryInfo();
+    //get current time
+    let today = new Date();
+    let current_date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
+    
+  }
+
+  getEmptyDeliveryInfo(){
+    return {
       name: "",
       mail: "",
       phone: "",
@@ -67,11 +84,6 @@ class Form extends Cart {
       shippingCost: "",
       discount: ""
     }
-    //get current time
-    let today = new Date();
-    let current_date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-
-    
   }
 
   render() {

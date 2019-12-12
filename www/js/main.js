@@ -42,3 +42,10 @@ window.setInterval(function () {
 $("body").on('click', '#cartSelector , navbar-toggler-icon,#check-selector', e => {
   $(".block").hide();
 });
+// $("body").on('click', '.fa-chevron-down',e =>{
+//    let nr = $(this).attr('id');
+//    console.log(nr)
+//   // $(`#toToggle-${order.orderNr}`).fadeToggle()
+
+
+// });

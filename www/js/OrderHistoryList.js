@@ -5,40 +5,38 @@ class OrderHistoryList {
 
     $("body").on('click', '.fa-sort', e => {
       store.orderHistory.sort((a, b) => (a.date > b.date ? 1 : -1))
-      console.log(store.orderHistory)
       this.render()
     });
   }
 
   rowOutput() {
     let output = " "
-    console.log(store.orderHistory)
     for (let order of store.orderHistory) {
       output += `<section class="row font-weight-bolder listBorder py-2">
                      <section class="col-2">${order.date}</section>
-                     <section class="col-4">${order.orderNr}</section>
+                     <section class="col-4 getNr">${order.orderNr}</section>
                      <section class="col-2">${order.quantity}</section>
                      <section class="col-2">${this.formatter.format(order.totalCost)}</section>
-                     <section class="col-2"><i class="fa fa-chevron-down"></i></section>
+                     <section class="col-2"  ><i id="${order.orderNr}" class="fa fa-chevron-down"></i></section>
                   </section>
                   `
-      output += `<section class="row listHeadBorder mt-5">
+      output += `<section class="row listHeadBorder mt-5 toToggle-${order.orderNr}">
         <section class="col-2"></section>
         <section class="col-6 text-dark font-weight-bolder"></section>
-        <section class="col-2 text-center text-dark font-weight-bolder">${order.quantity}</section>
-        <section class="col-2 text-dark font-weight-bolder">${this.formatter.format(order.totalCost)}</section>
+        <section class="col-2 text-center text-dark font-weight-bolder">Quantity</section>
+        <section class="col-2 text-dark font-weight-bolder text-right">Price Piece</section>
       </section>`
 
       for (let product of order.productList.products) {
-        output += `<section class="mb-5">
-      <section class="row listBorder">
+        output += `<section class="mb-5 toToggle-${order.orderNr}">
+      <section class="row listBorder" >
         <section class="col-2 py-2"><img class="border border-primary rounded list align-middle" src="${product.image}"></section>
         <section class="col-6 py-3 align-middle text-dark font-weight-bolder">${product.name} - ${product.short}</section>
         <section class="col-2 py-3 align-middle text-center text-dark font-weight-bolder">${product.quantity}</section>
         <section class="col-2 py-3 align-middle text-right text-dark font-weight-bolder">${this.formatter.format(product.price)}</section>
       </section>`
       }
-      output += `<section class="row">
+      output += `<section class="row ordertoggle toToggle-${order.orderNr}" >
         <section class="col-7">
           <section class="row">
             <section class="col-6">
