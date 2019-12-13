@@ -9,7 +9,7 @@ class Form extends Cart {
     this.totalShippingCost();
     this.discount();
 
-    $("body").on("click", '.fa-chevron-down', function(){
+    $("body").on("click", '.fa-chevron-down', function () {
       let nr = $(this).attr('id');
       let clas = $(this).attr('class')
       $(this).removeClass("fa fa-chevron-down")
@@ -18,16 +18,16 @@ class Form extends Cart {
     });
 
 
-    $("body").on("click", '.fa-chevron-up', function(){
+    $("body").on("click", '.fa-chevron-up', function () {
       let nr = $(this).attr('id');
       let clas = $(this).attr('class')
       $(this).removeClass("fa fa-chevron-up")
       $(this).addClass('fa fa-chevron-down');
       $(`.toToggle-${nr}`).slideToggle("slow")
     });
-    
-    
-   
+
+
+
     //first button
     $("body").on('click', '#firstbutton', e => {
       delivery_info = this.getEmptyDeliveryInfo();
@@ -41,19 +41,18 @@ class Form extends Cart {
     $("body").on('click', '#secondbutton', e => {
       $("#shipping").removeClass("active")
       $("#greeting").addClass("active")
-      this.confirmOrder();
       delivery_info.address.country = $("#country").val();
       delivery_info.mail = $("#mail").val();
       delivery_info.phone = $("#phone").val();
       delivery_info.address.city = $("#city").val();
       delivery_info.address.streetName = $("#street").val();
       delivery_info.address.zipCode = $("#zipcode").val();
-    
+
     });
 
     //third button
     $("body").on('click', '#thirdbutton', e => {
-       delivery_info.greeting = $("#msg").val();
+      delivery_info.greeting = $("#msg").val();
       delivery_info.discount = this.discount();
       delivery_info.shippingCost = this.totalShippingCost();
       delivery_info.quantity = this.count();
@@ -76,11 +75,11 @@ class Form extends Cart {
     let current_date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
     $("body").on('click', '#firstCancel', e => {
-      $("#fullName,#cardNr,#MM,#YY,#CVV,#mail,#phone,#country,#city,#street,#zipcode").val(""); 
+      $("#fullName,#cardNr,#MM,#YY,#CVV,#mail,#phone,#country,#city,#street,#zipcode").val("");
     });
   }
 
-  getEmptyDeliveryInfo(){
+  getEmptyDeliveryInfo() {
     return {
       name: "",
       mail: "",
@@ -101,7 +100,7 @@ class Form extends Cart {
       discount: ""
     }
   }
- 
+
 
   render() {
     $('main').html(/*html*/`
@@ -170,12 +169,12 @@ class Form extends Cart {
             <form role="form">
               <div class="form-group">
                 <label for="username">Full name (on the card)</label>
-                <input id="fullName" type="text" name="username" placeholder="Jason Doe" class="form-control">
+                <input id="fullName" type="text" name="username" placeholder="Jason Doe" class="form-control font-weight-bolder text-dark">
               </div>
               <div class="form-group">
                 <label for="cardNumber">Card number</label>
                 <div class="input-group">
-                  <input id="cardNr" type="text" name="cardNumber" placeholder="Your card number" class="form-control"  >
+                  <input id="cardNr" type="text" name="cardNumber" placeholder="Your card number" class="form-control font-weight-bolder text-dark"  >
                   <div class="input-group-append">
                     <span class="input-group-text text-muted">
                                                 <i class="fa fa-cc-visa mx-1"></i>
@@ -190,8 +189,8 @@ class Form extends Cart {
                   <div class="form-group">
                     <label><span class="hidden-xs">Expiration</span></label>
                     <div class="input-group">
-                      <input id="MM" type="number" placeholder="MM" name="" class="form-control"  >
-                      <input id="YY" type="number" placeholder="YY" name="" class="form-control"  >
+                      <input id="MM" type="number" placeholder="MM" name="" class=" font-weight-bolder text-dark"  >
+                      <input id="YY" type="number" placeholder="YY" name="" class="form-control font-weight-bolder text-dark"  >
                     </div>  
                   </div>
                 </div>
@@ -200,7 +199,7 @@ class Form extends Cart {
                     <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
                                                 <i class="fa fa-question-circle"></i>
                                             </label>
-                    <input id="CVV" type="text"   class="form-control">
+                    <input id="CVV" type="text"   class=" font-weight-bolder text-dark">
                   </div>
                 </div>
 
@@ -236,29 +235,29 @@ class Form extends Cart {
           <form role="form">
             <div class="form-group">
               <label for="username">E-Mail</label>
-              <input id="mail" type="text" name="username" placeholder="your@mail.com"   class="form-control">
+              <input id="mail" type="text" name="username" placeholder="your@mail.com"   class="form-control font-weight-bolder text-dark">
             </div>
             <form role="form">
             <div class="form-group">
               <label for="username">Phone Number</label>
-              <input id="phone" type="text" name="username" placeholder="555-12345"   class="form-control">
+              <input id="phone" type="text" name="username" placeholder="555-12345"   class="form-control font-weight-bolder text-dark">
             </div>
             <div class="form-group">
               <label for="username">Country</label>
-              <input id="country" type="text" name="username" placeholder="USA"   class="form-control">
+              <input id="country" type="text" name="username" placeholder="USA"   class="form-control font-weight-bolder text-dark">
             </div>
             <form role="form">
             <div class="form-group">
               <label for="username">City</label>
-              <input id="city" type="text" name="username" placeholder="Green River"   class="form-control">
+              <input id="city" type="text" name="username" placeholder="Green River"   class="form-control font-weight-bolder text-dark">
             </div>
             
             <form role="form">
             <div class="form-group">
                     <label><span class="hidden-xs">Adress</span></label>
                     <div class="input-group">
-                      <input id="street" type="text" placeholder="Streetname" name="" class="form-control">
-                      <input id="zipcode" type="number" placeholder="Zip Code" name="" class="form-control">
+                      <input id="street" type="text" placeholder="Streetname" name="" class="form-control font-weight-bolder text-dark">
+                      <input id="zipcode" type="number" placeholder="Zip Code" name="" class="form-control font-weight-bolder text-dark">
                     </div>
                   </div>
             
@@ -288,7 +287,7 @@ class Form extends Cart {
                 <p class="alert alert-success">Words mean everything</p>
               </div>
                 <p>Send a note to whoever recieves this box!<br> Maximum 100 characters!  </p>
-                <input id="msg" type="text" name="username" placeholder="Write your message here"   class="form-control">
+                <input id="msg" type="text" name="username" placeholder="Write your message here"   class="form-control font-weight-bolder text-dark">
                 <br>
                 <a id="firstCancel" href="#shop" class=" ml-0 ml-md-5  sticky-top font-weight-bolder btn btn-primary rounded-pill"></i></i>Back To Shop</a>
                 <a id="thirdbutton" href="#thankyou" class="font-weight-bolder btn btn-primary rounded-pill">Order</a>
