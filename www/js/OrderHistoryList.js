@@ -3,8 +3,15 @@ class OrderHistoryList {
   constructor() {
     this.formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
 
+    let sortOrder = 'ascending'
     $("body").on('click', '.fa-sort', e => {
-      store.orderHistory.sort((a, b) => (a.date > b.date ? 1 : -1))
+      sortOrder = sortOrder === 'ascending' ? 'descending' : 'ascending';
+      store.orderHistory.sort((a, b) => {
+        if (sortOrder === 'descending') {
+          return a.date > b.date ? -1 : 1;
+        }
+        return a.date > b.date ? 1 : -1
+      });
       this.render()
     });
   }
