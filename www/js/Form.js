@@ -9,6 +9,22 @@ class Form extends Cart {
     this.totalShippingCost();
     this.discount();
 
+    // make new delivery_info object to save form's input 
+    let delivery_info = this.getEmptyDeliveryInfo();
+
+    store.orderHistory = store.orderHistory || [];
+    
+    this.addEventsForFirstButton(delivery_info);
+    this.addEventsForSecondButton(delivery_info)
+    this.addEventsForThirdButton(delivery_info);
+
+    // clear form input
+    $("body").on('click', '#firstCancel', e => {
+      $("#fullName,#cardNr,#MM,#YY,#CVV,#mail,#phone,#country,#city,#street,#zipcode").val("");
+    });
+  }
+
+  addEventsForFirstButton(delivery_info) {
     //first button get from input & save to deliver_info object
     $("body").on('click', '#firstbutton', e => {
       delivery_info = this.getEmptyDeliveryInfo();
@@ -16,7 +32,9 @@ class Form extends Cart {
       $("#creditcard").removeClass("active")
       $("#shipping").addClass("active")
     });
+  }
 
+  addEventsForSecondButton(delivery_info) {
     //second button
     $("body").on('click', '#secondbutton', e => {
       $("#shipping").removeClass("active")
@@ -29,6 +47,13 @@ class Form extends Cart {
       delivery_info.address.zipCode = $("#zipcode").val();
 
     });
+
+  }
+  addEventsForThirdButton(delivery_info) {
+
+     //get current time
+     let today = new Date();
+     let current_date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
     //third button , get form input & save to deliver_info object
     //random order nr & currnet date
@@ -47,21 +72,8 @@ class Form extends Cart {
       store.save();
       $(" a >span").text("0");
     });
-
-    store.orderHistory = store.orderHistory || [];
-
-    // make new delivery_info object to save form's input 
-    let delivery_info = this.getEmptyDeliveryInfo();
-
-    //get current time
-    let today = new Date();
-   
-    let current_date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    // clear form input
-    $("body").on('click', '#firstCancel', e => {
-      $("#fullName,#cardNr,#MM,#YY,#CVV,#mail,#phone,#country,#city,#street,#zipcode").val("");
-    });
   }
+
 
   getEmptyDeliveryInfo() {
     return {

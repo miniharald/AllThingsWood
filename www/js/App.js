@@ -10,6 +10,7 @@ class App {
       "form": new Form(),
       "thankyou": new Thankyou(),
       "orderlist": new OrderHistoryList(),
+      "navBartAnimation" : new navBarAnimation(),
 
 
     }
