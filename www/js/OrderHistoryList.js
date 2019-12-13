@@ -23,8 +23,8 @@ class OrderHistoryList {
       <section class="row font-weight-bolder listOrderBorder py-2">
                      <section class="col-4 col-sm-3 col-md-2">${order.date}</section>
                      <section class="col-4 col-md-5 getNr">${order.orderNr}</section>
-                     <section class="d-none d-sm-block col-2">${order.quantity}</section>
-                     <section class="col-2">${this.formatter.format(order.totalCost)}</section>
+                     <section class="d-none d-sm-block col-2 text-center">${order.quantity}</section>
+                     <section class="col-2 text-right">${this.formatter.format(order.totalCost)}</section>
                      <section class="col-2 col-sm-1 text-right" ><i id="${order.orderNr}" class="fa fa-chevron-down"></i></section>
                   </section>
                   <div class="toToggle-${order.orderNr} ordertoggle">
@@ -41,7 +41,7 @@ class OrderHistoryList {
         <section class="col-2 col-md-1 py-2"><img class="border border-primary rounded list align-middle" src="${product.image}"></section>
         <section class="col-4 col-sm-5 col-md-7 py-3 align-middle text-dark font-weight-bolder"><span class="align-middle">${product.name}</span><span class="align-middle d-none d-md-block"> - ${product.short}</span></section>
         <section class="col-2 py-3 align-middle text-center text-dark font-weight-bolder"><span class="align-middle">${product.quantity}</span></section>
-        <section class="col-4 col-sm-3 col-md-2 py-3 align-middle text-right text-dark font-weight-bolder"><span class="align-middle">${this.formatter.format(product.price)}</span></section>
+        <section class="col-4 col-sm-3 col-md-2 py-3 align-middle text-right text-dark font-weight-bolder text-right"><span class="align-middle">${this.formatter.format(product.price)}</span></section>
       </section>`
       }
       output += `<section class="row mb-5 mt-2" >
@@ -84,8 +84,8 @@ class OrderHistoryList {
                       <section class="row font-weight-bolder listHeadBorder py-2">
                         <section class="col-4 col-sm-3 col-md-2">Datum <i class="fa fa-sort"></i></section>
                         <section class="col-4 col-md-5">Order</section>
-                        <section class="d-none d-sm-block col-2">Antal</section>
-                        <section class="col-2">Summa</section>
+                        <section class="d-none d-sm-block col-2 text-center">Quantity</section>
+                        <section class="col-2 text-right">Cost</section>
                         <section class="col-2 col-sm-1"></section>
                        </section>
                         ${output}`);
