@@ -39,14 +39,16 @@ class Form extends Cart {
 
     //second button
     $("body").on('click', '#secondbutton', e => {
+      $("#shipping").removeClass("active")
+      $("#greeting").addClass("active")
+      this.confirmOrder();
       delivery_info.address.country = $("#country").val();
       delivery_info.mail = $("#mail").val();
       delivery_info.phone = $("#phone").val();
       delivery_info.address.city = $("#city").val();
       delivery_info.address.streetName = $("#street").val();
       delivery_info.address.zipCode = $("#zipcode").val();
-      $("#shipping").removeClass("active")
-      $("#greeting").addClass("active")
+    
     });
 
     //third button
@@ -75,11 +77,7 @@ class Form extends Cart {
 
     $("body").on('click', '#firstCancel', e => {
       $("#fullName,#cardNr,#MM,#YY,#CVV,#mail,#phone,#country,#city,#street,#zipcode").val(""); 
-      this.removeAllProductFromCart()
-      console.log(this.storeLenght);
-     
     });
-    
   }
 
   getEmptyDeliveryInfo(){
@@ -103,6 +101,7 @@ class Form extends Cart {
       discount: ""
     }
   }
+ 
 
   render() {
     $('main').html(/*html*/`
@@ -216,8 +215,8 @@ class Form extends Cart {
              
               
               <div class="col text-center ">
-              <a href="#shop" id="firstCancel"   class=" ml-5 font-weight-bolder btn btn-primary rounded-pill"></i></i>Cancel Order</a>
-              <a id="firstbutton" data-toggle="pill" href="#nav-tab-paypal" class=" mr-5 font-weight-bolder btn btn-primary rounded-pill "> <i class="fa fa-check-square"></i></i> Continue</a>
+              <a href="#shop" id="firstCancel"   class="ml-0 ml-md-5 font-weight-bolder btn btn-primary rounded-pill">Back To Shop</a>
+              <a id="firstbutton" data-toggle="pill" href="#nav-tab-paypal" class=" font-weight-bolder btn btn-primary rounded-pill ">Next</a>
               
 
               <!-- next-button -->
@@ -274,8 +273,8 @@ class Form extends Cart {
 
             
             <div class="col text-center">
-            <a id="firstCancel"  href="#shop" class="  sticky-top font-weight-bolder btn btn-primary rounded-pill"></i></i>Cancel Order</a>
-            <a id="secondbutton" data-toggle="pill" href="#nav-tab-bank" class="font-weight-bolder btn btn-primary rounded-pill "><i class="fa fa-check-square"></i></i> Continue</a>
+            <a id="firstCancel"  href="#shop" class=" ml-0 ml-md-5 sticky-top font-weight-bolder btn btn-primary rounded-pill">Back To Shop</a>
+            <a id="secondbutton" data-toggle="pill" href="#nav-tab-bank" class="font-weight-bolder btn btn-primary rounded-pill ">Next</a>
            
           </form>
         </div>
@@ -291,8 +290,10 @@ class Form extends Cart {
                 <p>Send a note to whoever recieves this box!<br> Maximum 100 characters!  </p>
                 <input id="msg" type="text" name="username" placeholder="Write your message here"   class="form-control">
                 <br>
-                <a id="thirdbutton" href="#thankyou" class="font-weight-bolder btn btn-primary rounded-pill"><i class="fa fa-check-square"></i></i> Finish</a>
-            </div>
+                <a id="firstCancel" href="#shop" class=" ml-0 ml-md-5  sticky-top font-weight-bolder btn btn-primary rounded-pill"></i></i>Back To Shop</a>
+                <a id="thirdbutton" href="#thankyou" class="font-weight-bolder btn btn-primary rounded-pill">Order</a>
+                           
+                </div>
            </div>
                 <!-- End -->
         </div>

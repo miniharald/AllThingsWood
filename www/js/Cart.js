@@ -246,11 +246,6 @@ class Cart {
     this.trashListener();
   }
 
-  removeAllProductFromCart() {
-    console.log(store.products.length)
-    store.products = [];
-    $(" a >span").text("0");
-    store.save();
-  }
+  
 
 }
