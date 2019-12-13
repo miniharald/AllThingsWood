@@ -9,29 +9,9 @@ class Form extends Cart {
     this.totalShippingCost();
     this.discount();
 
-    $("body").on("click", '.fa-chevron-down', function () {
-      let nr = $(this).attr('id');
-      let clas = $(this).attr('class')
-      $(this).removeClass("fa fa-chevron-down")
-      $(this).addClass('fa fa-chevron-up');
-      $(`.toToggle-${nr}`).slideToggle("slow")
-    });
-
-
-    $("body").on("click", '.fa-chevron-up', function () {
-      let nr = $(this).attr('id');
-      let clas = $(this).attr('class')
-      $(this).removeClass("fa fa-chevron-up")
-      $(this).addClass('fa fa-chevron-down');
-      $(`.toToggle-${nr}`).slideToggle("slow")
-    });
-
-
-
-    //first button
+    //first button get from input & save to deliver_info object
     $("body").on('click', '#firstbutton', e => {
       delivery_info = this.getEmptyDeliveryInfo();
-
       delivery_info.name = $("#fullName").val();
       $("#creditcard").removeClass("active")
       $("#shipping").addClass("active")
@@ -50,7 +30,8 @@ class Form extends Cart {
 
     });
 
-    //third button
+    //third button , get form input & save to deliver_info object
+    //random order nr & currnet date
     $("body").on('click', '#thirdbutton', e => {
       delivery_info.greeting = $("#msg").val();
       delivery_info.discount = this.discount();
@@ -69,11 +50,14 @@ class Form extends Cart {
 
     store.orderHistory = store.orderHistory || [];
 
+    // make new delivery_info object to save form's input 
     let delivery_info = this.getEmptyDeliveryInfo();
+
     //get current time
     let today = new Date();
+   
     let current_date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-
+    // clear form input
     $("body").on('click', '#firstCancel', e => {
       $("#fullName,#cardNr,#MM,#YY,#CVV,#mail,#phone,#country,#city,#street,#zipcode").val("");
     });
