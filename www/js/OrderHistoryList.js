@@ -3,7 +3,7 @@ class OrderHistoryList {
   constructor() {
     this.formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
     let sortOrder = 'ascending'
-    
+
     $("body").on('click', '.fa-sort', e => {
       sortOrder = sortOrder === 'ascending' ? 'descending' : 'ascending';
       store.orderHistory.sort((a, b) => {
@@ -15,21 +15,11 @@ class OrderHistoryList {
       this.render()
     });
 
-    //slideToggel on history order
-    $("body").on("click", '.fa-chevron-down', function () {
-      let nr = $(this).attr('id');
-      let clas = $(this).attr('class')
-      $(this).removeClass("fa fa-chevron-down")
-      $(this).addClass('fa fa-chevron-up');
-      $(`.toToggle-${nr}`).slideToggle("slow")
-    });
-
-    $("body").on("click", '.fa-chevron-up', function () {
-      let nr = $(this).attr('id');
-      let clas = $(this).attr('class')
-      $(this).removeClass("fa fa-chevron-up")
-      $(this).addClass('fa fa-chevron-down');
-      $(`.toToggle-${nr}`).slideToggle("slow")
+    $('body').on('click', '.fa-chevron-down, .fa-chevron-up', e => {
+      $(e.currentTarget).toggleClass('fa-chevron-down fa-chevron-up');
+      let nr = $(e.currentTarget).attr('id');
+      console.log(nr)
+      $(`.toToggle-${nr}`).slideToggle("slow");
     });
   }
 
