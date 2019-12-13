@@ -30,7 +30,7 @@ body, .inside-i {
 
 .banner{
   width: 100%;
-  height: 40vh;
+  height: 41vh;
   background-image: url(images/woods.jpeg);
   background-size: cover;
   background-position: 50% 50%;
@@ -62,10 +62,9 @@ h2 {
 }
 
 .order-icon {
-  background: url('images/orderhistorysmaller.png') no-repeat left top;
-  width: 1.7rem;
-  height: 1.8rem;
-  background-size: cover;
+  background: url('images/orderh26.png') no-repeat left top;
+  width: 1.6rem;
+  height: 1.6rem;
   transition: color 0.15s ease-in-out, 
   background-color 0.15s ease-in-out, 
   border-color 0.15s ease-in-out, 
@@ -73,7 +72,7 @@ h2 {
 }
 
 .order-icon:hover {
-  background-image: url(images/orderhistorysmallerhover.png);
+  background-image: url(images/orderh26hover.png);
   transition: color 0.15s ease-in-out, 
   background-color 0.15s ease-in-out, 
   border-color 0.15s ease-in-out, 
@@ -103,9 +102,18 @@ h2 {
   border-bottom: 3px solid #27380c;
 }
 
+.listOrderHeadBorder{
+  border-bottom: 1px solid #27380c;
+}
+
 .listBorder{
   border-bottom: 1px dotted #27380c;
 }
+
+.listOrderBorder{
+  border-top: 1px dotted #27380c;
+}
+
 .ordertoggle{
   display: none;
 }
