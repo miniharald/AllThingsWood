@@ -39,7 +39,7 @@ class OrderHistoryList {
         output += `<section class="mb-5">
       <section class="row listBorder" >
         <section class="col-2 col-md-1 py-2"><img class="border border-primary rounded list align-middle" src="${product.image}"></section>
-        <section class="col-4 col-sm-5 col-md-7 py-3 align-middle text-dark font-weight-bolder"><span class="align-middle">${product.name}</span><span class="align-middle d-none d-md-block"> - ${product.short}</span></section>
+        <section class="d-flex col-4 col-sm-5 col-md-7 py-3 align-middle text-dark font-weight-bolder"><span class="align-middle">${product.name}</span><span class="align-middle d-none d-md-block"> - ${product.short}</span></section>
         <section class="col-2 py-3 align-middle text-center text-dark font-weight-bolder"><span class="align-middle">${product.quantity}</span></section>
         <section class="col-4 col-sm-3 col-md-2 py-3 align-middle text-right text-dark font-weight-bolder text-right"><span class="align-middle">${this.formatter.format(product.price)}</span></section>
       </section>`
