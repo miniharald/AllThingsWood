@@ -54,7 +54,7 @@ class Form extends Cart {
     //get current time
     let today = new Date();
     let current_date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + '-' + today.getHours() + '-'
-      + today.getMinutes() + '-' + today.getSeconds();;
+      + today.getMinutes() + '-' + today.getSeconds();
 
     //third button , get form input & save to deliver_info object
     //random order nr & currnet date
