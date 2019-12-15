@@ -27,7 +27,6 @@ class Form extends Cart {
   addEventsForFirstButton(delivery_info) {
     //first button get from input & save to deliver_info object
     $("body").on('click', '#firstbutton', e => {
-      delivery_info = this.getEmptyDeliveryInfo();
       delivery_info.name = $("#fullName").val();
       $("#creditcard").removeClass("active")
       $("#shipping").addClass("active")
