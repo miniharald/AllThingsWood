@@ -13,7 +13,7 @@ class Form extends Cart {
     let delivery_info = this.getEmptyDeliveryInfo();
 
     store.orderHistory = store.orderHistory || [];
-    
+
     this.addEventsForFirstButton(delivery_info);
     this.addEventsForSecondButton(delivery_info)
     this.addEventsForThirdButton(delivery_info);
@@ -51,9 +51,10 @@ class Form extends Cart {
   }
   addEventsForThirdButton(delivery_info) {
 
-     //get current time
-     let today = new Date();
-     let current_date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    //get current time
+    let today = new Date();
+    let current_date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate() + '-' + today.getHours() + '-'
+      + today.getMinutes() + '-' + today.getSeconds();;
 
     //third button , get form input & save to deliver_info object
     //random order nr & currnet date

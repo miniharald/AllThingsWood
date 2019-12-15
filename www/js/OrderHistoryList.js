@@ -28,7 +28,7 @@ class OrderHistoryList {
     for (let order of store.orderHistory) {
       output += `</div>
       <section class="row font-weight-bolder listOrderBorder py-2">
-                     <section class="col-4 col-sm-3 col-md-2">${order.date}</section>
+                     <section class="col-4 col-sm-3 col-md-2">${order.date.slice(0, 10)}</section>
                      <section class="col-4 col-md-5 getNr">${order.orderNr}</section>
                      <section class="d-none d-sm-block col-2 text-center">${order.quantity}</section>
                      <section class="col-2 text-right">${this.formatter.format(order.totalCost)}</section>
